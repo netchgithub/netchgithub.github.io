@@ -114,6 +114,7 @@
                                           				  				  				<div id="content_views" class="htmledit_views"> <p>&nbsp; &nbsp; java里的拦截器是动态拦截Action调用的对象。它提供了一种机制可以使开发者可以定义在一个action执行的前后执行的代码，也可以在一个action执行前阻止其执行，同时也提供了一种可以提取action中可重用部分的方式。在AOP（Aspect-Oriented Programming）中拦截器用于在某个方法或字段被访问之前，进行拦截然后在之前或之后加入某些操作。可用通过它来进行权限验证，判断用户是否登陆等。</p> <h3>一.定义拦截器</h3> <p>&nbsp; &nbsp; &nbsp;SpringMVC&nbsp;中的Interceptor&nbsp;拦截请求是通过HandlerInterceptor&nbsp;来实现的。该接口有三个方法</p> <pre class="has"><code class="language-java">default boolean preHandle(HttpServletRequest request,  HttpServletResponse response, Object handler)throws Exception {  		return true; 	}</code></pre> <p>&nbsp; &nbsp; 该方法将在请求处理之前进行调用。SpringMVC&nbsp;中的Interceptor&nbsp;是链式的调用的，在一个应用中或者说是在一个请求中可以同时存在多个Interceptor&nbsp;。每个Interceptor&nbsp;的调用会依据它的声明顺序依次执行，而且最先执行的都是Interceptor&nbsp;中的preHandle&nbsp;方法，所以可以在这个方法中进行一些前置初始化操作或者是对当前请求的一个预处理，也可以在这个方法中进行一些判断来决定请求是否要继续进行下去。该方法的返回值是布尔值Boolean&nbsp;类型的，当它返回为false&nbsp;时，表示请求结束，后续的Interceptor&nbsp;和Controller&nbsp;都不会再执行；当返回值为true&nbsp;时就会继续调用下一个Interceptor&nbsp;的preHandle&nbsp;方法，如果已经是最后一个Interceptor&nbsp;的时候就会是调用当前请求的Controller&nbsp;方法。</p> <pre class="has"><code class="language-java">default void postHandle(HttpServletRequest request, HttpServletResponse response,  Object handler,@Nullable ModelAndView modelAndView) throws Exception {  	}</code></pre> <p>&nbsp; &nbsp; 由preHandle&nbsp;方法的解释我们知道这个方法包括后面要说到的afterCompletion&nbsp;方法都只能是在当前所属的Interceptor&nbsp;的preHandle&nbsp;方法的返回值为true&nbsp;时才能被调用。postHandle&nbsp;方法，顾名思义就是在当前请求进行处理之后，也就是Controller&nbsp;方法调用之后执行，但是它会在DispatcherServlet&nbsp;进行视图返回渲染之前被调用，所以我们可以在这个方法中对Controller&nbsp;处理之后的ModelAndView&nbsp;对象进行操作。</p> <pre class="has"><code class="language-java">default void afterCompletion(HttpServletRequest request,  HttpServletResponse response, Object handler,@Nullable Exception ex) throws Exception {  	}</code></pre> <p>&nbsp; &nbsp; 该方法也是需要当前对应的Interceptor&nbsp;的preHandle&nbsp;方法的返回值为true时才会执行。顾名思义，该方法将在整个请求结束之后，也就是在DispatcherServlet&nbsp;渲染了对应的视图之后执行。这个方法的主要作用是用于进行资源清理工作的。</p> <h3>二.把定义好的拦截器类加入到拦截体系中</h3> <p>需要mvc命名空间</p> <pre class="has"><code>xmlns:mvc="http://www.springframework.org/schema/mvc" 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd</code></pre> <pre class="has"><code>&lt;mvc:interceptors&gt; 		&lt;mvc:interceptor&gt; 			&lt;!--匹配的路径 --&gt; 			&lt;mvc:mapping path="/*" /&gt; 			&lt;!--不匹配的路径 --&gt; 			&lt;mvc:exclude-mapping path="/js/*" /&gt; 			&lt;bean class="com.buba.interceptor.TestInterceptor" /&gt; 		&lt;/mvc:interceptor&gt; &lt;/mvc:interceptors&gt;</code></pre> <p><strong>拦截器和过滤器区别</strong><br /> ①拦截器是基于<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://lib.csdn.net/base/javase"  rel="nofollow">Java</a>的反射机制的，而过滤器是基于函数回调。<br /> ②拦截器不依赖与servlet容器，依赖于web框架，在SpringMVC中就是依赖于SpringMVC框架。过滤器依赖与servlet容器。<br /> ③拦截器只能对action（也就是controller）请求起作用，而过滤器则可以对几乎所有的请求起作用,并且可以对请求的资源进行起作用，但是缺点是一个过滤器实例只能在容器初始化时调用一次。<br /> ④拦截器可以访问action上下文、值栈里的对象，而过滤器不能访问。<br /> ⑤在action的生命周期中，拦截器可以多次被调用，而过滤器只能在容器初始化时被调用一次。<br /> ⑥拦截器可以获取IOC容器中的各个bean，而过滤器就不行，这点很重要，在拦截器里注入一个service，可以调用业务逻辑</p> <p><strong>如果本文对您有很大的帮助，还请点赞关注一下。</strong></p> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-25378.htm">深度学习自定义自动求导函数</a></p>
+                                        <p>下一个：<a href="/news/article-25841.htm">一文详解微服务架构</a></p>
                                     </div>
                                     </div>
                     <div class="col-md-3">
@@ -123,16 +124,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-10-14-node-share-links.htm" title="「10月14日」最高速度19.3M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月14日」最高速度19.3M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-17-netch-node.htm" title="「11月17日」最高速度19.8M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月17日」最高速度19.8M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-21-share-netch-node.htm" title="「10月21日」最高速度21M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月21日」最高速度21M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-24403.htm" title="打猫哪里最疼却打不坏（打猫什么部位最疼）">打猫哪里最疼却打不坏（打猫什么部位最疼）</a></li>
-                        <li class="py-2"><a href="/news/article-23540.htm" title="厂家批发网站平台有哪些好（厂家批发网站平台有哪些好的）">厂家批发网站平台有哪些好（厂家批发网站平台有哪些好的）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-9-free-node-subscribe-links.htm" title="「9月9日」最高速度18.1M/S，2024年Netch Github每天更新免费机场订阅节点链接">「9月9日」最高速度18.1M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-6-share-netch-node.htm" title="「10月6日」最高速度18.9M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月6日」最高速度18.9M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-17-node-share.htm" title="「9月17日」最高速度21M/S，2024年Netch Github每天更新免费机场订阅节点链接">「9月17日」最高速度21M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-7-share-netch-node.htm" title="「10月7日」最高速度21.2M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月7日」最高速度21.2M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-12-netch-node.htm" title="「9月12日」最高速度21.8M/S，2024年Netch Github每天更新免费机场订阅节点链接">「9月12日」最高速度21.8M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-21232.htm" title="动物疫苗多少钱打一次针啊（小动物打疫苗多少钱一只）">动物疫苗多少钱打一次针啊（小动物打疫苗多少钱一只）</a></li>
+                        <li class="py-2"><a href="/news/article-23065.htm" title="蜜雪加盟咨询电话（蜜雪加盟一般多少钱）">蜜雪加盟咨询电话（蜜雪加盟一般多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-10-node-share-links.htm" title="「9月10日」最高速度19.8M/S，2024年Netch Github每天更新免费机场订阅节点链接">「9月10日」最高速度19.8M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-30-node-share.htm" title="「10月30日」最高速度21.7M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月30日」最高速度21.7M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-10-free-high-speed-nodes.htm" title="「12月10日」最高速度19.6M/S，2024年Netch Github每天更新免费机场订阅节点链接">「12月10日」最高速度19.6M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-5-free-high-speed-nodes.htm" title="「10月5日」最高速度22.1M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月5日」最高速度22.1M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-3-free-netch-node.htm" title="「10月3日」最高速度18.7M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月3日」最高速度18.7M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-19859.htm" title="宠物医生需要什么学历和专业（宠物医生需要什么学历和专业的）">宠物医生需要什么学历和专业（宠物医生需要什么学历和专业的）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-node-share.htm" title="「11月29日」最高速度20.9M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月29日」最高速度20.9M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-free-netch.htm" title="「12月4日」最高速度19.6M/S，2024年Netch Github每天更新免费机场订阅节点链接">「12月4日」最高速度19.6M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
                     </ul>
     </div>
 </div>
@@ -144,7 +145,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
