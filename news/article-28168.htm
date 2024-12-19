@@ -2,12 +2,11 @@
 <html class="no-js" lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://netchgithub.github.io" />
+        <link rel="canonical" href="https://netchgithub.github.io/news/article-28168.htm" />
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>隐私申明 - Netch Github节点订阅官网</title>
-        <meta name="keywords" content="隐私申明 - Netch Github节点订阅官网" />
-        <meta name="description" content="隐私申明 - Netch Github节点订阅官网" />
+    <title>Vue3实践setup函数详解</title>
+        <meta name="description" content="setup() 函数是Vue3.0中，专门为组件提供的新属性。它为基于Composition API 的新特性提供了统一的入口。 在Vue3中，定义methods、watch、computed、dat" />
         <link rel="icon" href="/assets/website/img/netchgithub/favicon.ico" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -37,7 +36,7 @@
      crossorigin="anonymous"></script>
 </head>
 
-<body data-page="newly_discovered_nodes">
+<body data-page="detail">
         <!-- Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -97,9 +96,9 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-tittle text-center mb-80">
-                            <h1>隐私申明</h1>
+                            <h1>Vue3实践setup函数详解</h1>
                             <p>
-                                <a href="/">首页</a> / 隐私申明
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
                             </p>
                         </div>
                     </div>
@@ -112,52 +111,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
-                        <p>本平台专注于为用户提供V2ray、Clash等免费节点订阅服务，我们深知用户隐私的重要性，并致力于保护用户的个人信息和隐私安全。本隐私声明旨在明确告知用户本平台如何收集、使用、存储和保护用户的个人信息。</p>
-<p>一、信息收集</p>
-<ol>
-    <li>
-        <p><strong>用户主动提供的信息</strong>：当用户在本平台注册、使用服务或参与特定活动时，可能会主动提供个人信息，如姓名、邮箱地址等。这些信息将仅用于提供服务或活动的目的，并在用户明确同意的情况下进行收集。</p>
-    </li>
-    <li>
-        <p><strong>服务使用数据</strong>：为了优化用户体验和服务质量，本平台可能会自动收集用户在使用服务过程中产生的数据，如访问记录、节点使用情况等。这些数据将用于分析服务使用情况，以便我们持续改进服务。</p>
-    </li>
-</ol>
-<p>二、信息使用</p>
-<ol>
-    <li>
-        <p><strong>提供服务</strong>：本平台将使用收集到的信息来提供用户所需的服务，包括但不限于节点订阅、服务更新通知等。</p>
-    </li>
-    <li>
-        <p><strong>数据分析</strong>：我们可能会对收集到的数据进行分析，以了解用户的使用习惯和需求，从而改进和优化服务。</p>
-    </li>
-    <li>
-        <p><strong>法律合规</strong>：在必要时，我们可能会根据法律法规的要求，向相关部门提供用户的个人信息，以配合执法或调查工作。</p>
-    </li>
-</ol>
-<p>三、信息存储与保护</p>
-<ol>
-    <li>
-        <p><strong>信息安全</strong>：本平台将采取必要的技术和管理措施，确保用户个人信息的安全。我们会对存储的数据进行加密处理，并定期进行安全检查和漏洞修复。</p>
-    </li>
-    <li>
-        <p><strong>信息存储期限</strong>：我们将根据服务需求和相关法律法规的要求，合理确定用户个人信息的存储期限。一旦超出存储期限，我们将对个人信息进行删除或匿名化处理。</p>
-    </li>
-</ol>
-<p>四、用户权利</p>
-<ol>
-    <li>
-        <p><strong>访问与更正</strong>：用户有权访问自己的个人信息，并对其进行更正。用户可以通过本平台提供的联系方式，申请查看或修改自己的个人信息。</p>
-    </li>
-    <li>
-        <p><strong>删除</strong>：在用户停止使用服务或注销账户后，我们将根据用户的请求，删除或匿名化处理其个人信息。</p>
-    </li>
-    <li>
-        <p><strong>投诉与举报</strong>：如果用户认为本平台在处理个人信息方面存在违法行为，可以通过本平台提供的联系方式进行投诉或举报。</p>
-    </li>
-</ol>
-<p>五、隐私声明的更新与修改</p>
-<p>本平台有权根据实际情况和法律法规的变化，对本隐私声明进行更新和修改。任何对隐私声明的修改都将通过本平台公告或电子邮件等方式通知用户。用户在使用服务时，应定期查看隐私声明，以了解最新的个人信息保护措施。</p>
-                    </div>
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p><strong>setup()</strong> 函数是Vue3.0中，专门为组件提供的新属性。它为基于<strong>Composition API</strong> 的新特性提供了统一的入口。</p> <pre><code>在Vue3中，定义methods、watch、computed、data数据都放在了setup()函数中</code></pre> <h5><a id="1_4" rel="nofollow"></a>1.执行时间</h5> <pre><code>setup函数会在生命周期的beforeCreate之前执行</code></pre> <p>代码验证</p> <pre><code class="prism language-javascript">	      Vue<span class="token punctuation">.</span><span class="token function">createApp</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span><span class="token function">beforeCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'beforeCreate'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'created'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'setup'</span><span class="token punctuation">)</span><span class="token keyword">let</span> name<span class="token operator">=</span><span class="token string">'张三'</span><span class="token punctuation">;</span><span class="token keyword">let</span> age<span class="token operator">=</span><span class="token number">17</span><span class="token punctuation">;</span><span class="token keyword">return</span><span class="token punctuation">{<!-- --></span>                     name<span class="token punctuation">,</span>                     age<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span></code></pre> <p>控制台输出<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/0a676d061f8fd8f509244f2478fc02f4.jpg" alt="Vue3实践setup函数详解"></p> <h5><a id="2_props_29" rel="nofollow"></a>2.参数 props</h5> <pre><code>props是setup()函数的一个形参，组件接收的props数据可以在setup()函数内访问到。</code></pre> <p>在App.vue中（脚手架搭建…如果不知道请移动到<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/AIB_Kasic/article/details/120860727"  rel="nofollow">用vue-cli创建vue3.0项目</a>）</p> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span><span class="token operator">&lt;</span>HelloWorld msg<span class="token operator">=</span><span class="token string">"Welcome to Your Vue.js App"</span><span class="token operator">/</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span></code></pre> <p>在HelloWorld 组件中有如下代码</p> <pre><code class="prism language-javascript"><span class="token function">setup</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span>context</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'setup参数'</span><span class="token punctuation">,</span>props<span class="token punctuation">,</span>context<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>控制台输出<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/92820232c8136263eb382a6d06a91eeb.jpg" alt="Vue3实践setup函数详解"></p> <pre><code>注意：在 setup() 函数中访问不到Vue的 this 实例</code></pre> <h5><a id="2_context_50" rel="nofollow"></a>2.参数 context</h5> <pre><code>context 是 setup() 的第二个形参，它是一个上下文对象，可以通过 context 来访问Vue的实例 this 。</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-27710.htm">动物接种疫苗的方法有哪些种类（动物接种途径有哪些）</a></p>
+                                        <p>下一个：<a href="/news/article-28169.htm">HashMap中红黑树插入节点的调整过程分析_在线工具</a></p>
+                                    </div>
+                                    </div>
                     <div class="col-md-3">
                         <div class="panel panel-default">
     <div class="panel-heading">
@@ -165,16 +125,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-10-24-linux-netch-node.htm" title="「10月24日」最高速度22.9M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月24日」最高速度22.9M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-5-free-high-speed-nodes.htm" title="「10月5日」最高速度22.1M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月5日」最高速度22.1M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-1-free-netch-node.htm" title="「10月1日」最高速度22.3M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月1日」最高速度22.3M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-5-free-high-speed-nodes.htm" title="「11月5日」最高速度21.2M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月5日」最高速度21.2M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-28-free-netch-node.htm" title="「10月28日」最高速度20.6M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月28日」最高速度20.6M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-15-linux-netch-node.htm" title="「11月15日」最高速度19.5M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月15日」最高速度19.5M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-23-node-share-links.htm" title="「10月23日」最高速度22.5M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月23日」最高速度22.5M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-19-netch-node.htm" title="「12月19日」最高速度18.5M/S，2024年Netch Github每天更新免费机场订阅节点链接">「12月19日」最高速度18.5M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-14-free-node-subscribe.htm" title="「12月14日」最高速度19M/S，2024年Netch Github每天更新免费机场订阅节点链接">「12月14日」最高速度19M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-netch-node.htm" title="「11月17日」最高速度19.8M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月17日」最高速度19.8M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-free-netch-node.htm" title="「11月22日」最高速度18.2M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月22日」最高速度18.2M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-node-share.htm" title="「11月8日」最高速度18M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月8日」最高速度18M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
                         <li class="py-2"><a href="/news/article-21668.htm" title="猫咪领养协议（猫咪领养协议有什么用）">猫咪领养协议（猫咪领养协议有什么用）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-12-free-netch-node.htm" title="「12月12日」最高速度22.7M/S，2024年Netch Github每天更新免费机场订阅节点链接">「12月12日」最高速度22.7M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-netch-node.htm" title="「11月26日」最高速度22.3M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月26日」最高速度22.3M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-20-netch-node.htm" title="「9月20日」最高速度21.3M/S，2024年Netch Github每天更新免费机场订阅节点链接">「9月20日」最高速度21.3M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-node-subscribe-links.htm" title="「11月13日」最高速度21M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月13日」最高速度21M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-node-share-links.htm" title="「12月8日」最高速度21.9M/S，2024年Netch Github每天更新免费机场订阅节点链接">「12月8日」最高速度21.9M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-22-node-share-links.htm" title="「9月22日」最高速度20.7M/S，2024年Netch Github每天更新免费机场订阅节点链接">「9月22日」最高速度20.7M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
                     </ul>
     </div>
 </div>
