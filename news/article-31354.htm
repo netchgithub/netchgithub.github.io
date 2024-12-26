@@ -2,12 +2,11 @@
 <html class="no-js" lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://netchgithub.github.io" />
+        <link rel="canonical" href="https://netchgithub.github.io/news/article-31354.htm" />
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>2024-08归档 - Netch Github节点订阅官网</title>
-        <meta name="keywords" content="2024-08归档Netch Github节点订阅官网" />
-        <meta name="description" content="2024-08归档，当前是第1页" />
+    <title>字符串逆序(递归实现)</title>
+        <meta name="description" content="题目即要求  字符串逆序(递归实现),不能使用C函数库中的字符串操作函数。 char arr [] =“abedef” 逆序之后数组的内容变成: fedcba  先分析题目,如果不用递归如何实现? 双" />
         <link rel="icon" href="/assets/website/img/netchgithub/favicon.ico" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -36,7 +35,7 @@
      crossorigin="anonymous"></script>
 </head>
 
-<body data-page="category">
+<body data-page="detail">
         <!-- Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -96,9 +95,9 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-tittle text-center mb-80">
-                            <h1>2024-08 归档</h1>
+                            <h1>字符串逆序(递归实现)</h1>
                             <p>
-                                <a href="/">首页</a> / 2024-08 归档
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
                             </p>
                         </div>
                     </div>
@@ -111,64 +110,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
-                        <div class="xcblog-blog-list">
-                                                        <div class="row item xcblog-blog-item" data-date="2024-08-21">
-                                <div class="col-md-3">
-                                    <div class="we-create-img">
-                                        <a href="/free-nodes/2024-8-21-free-node-subscribe-links.htm" class="xcblog-blog-url">
-                                            <img src="/uploads/20240819-2/560f004586c7c9e835da433c3b93f243.webp" alt="「8月21日」最高速度22.1M/S，2024年Netch Github每天更新免费机场订阅节点链接">
-                                        </a>
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-kimbie-light"> <h2> <a id="_0" rel="nofollow"></a>题目即要求</h2> <blockquote> <p>字符串逆序(递归实现),不能使用C函数库中的字符串操作函数。 char arr [] =“abedef” 逆序之后数组的内容变成: fedcba</p> </blockquote> <p>先分析题目,如果不用递归如何实现?</p> <p><strong>双指针,一个从头走,一个从尾走,交换两个元素,直接贴代码</strong></p> <pre><code class="prism language-c"><span class="token keyword">void</span> <span class="token function">reverse_string2</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	<span class="token keyword">int</span> len<span class="token operator">=</span><span class="token function">strlen</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token keyword">int</span> left<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>right<span class="token operator">=</span>len<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> 	 	<span class="token keyword">while</span><span class="token punctuation">(</span>left<span class="token operator">&lt;</span>right<span class="token punctuation">)</span><span class="token comment">//&lt;=都可,因为当left&gt;right或是=right时,一个元素或者小于一个元素的交换都一样  </span> 	<span class="token punctuation">{<!-- --></span> 		<span class="token comment">//交换左右变量 </span> 		<span class="token keyword">int</span> temp<span class="token operator">=</span>arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">;</span> 		arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">;</span> 		arr<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span> 		 		left<span class="token operator">++</span><span class="token punctuation">;</span> 		right<span class="token operator">--</span><span class="token punctuation">;</span> 	<span class="token punctuation">}</span>  <span class="token punctuation">}</span> </code></pre> <p><strong>那么,问题来了,用递归怎么实现呢.先来看下我画的粗略图:(</strong></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230223/28d175a76931dd14d95039fb0983c56c.jpg" alt="字符串逆序(递归实现)"></p> <p><strong>依次解释下操作</strong></p> <ol> <li> <strong>将第一个元素存放在临时变量中</strong>.</li> <li><strong>将最后一个元素放在首位</strong></li> <li><strong>将最后一个元素的位置置为\0,表明字符串结束位置</strong></li> <li><strong>开始递归,将当前指针向后指一位,如图,a-b</strong></li> <li><strong>从后一位开始递归,重复上述操作,因为表明了字符串结束位置,所以是从b-e的遍历</strong></li> <li><strong>此时将最后一个元素,也就是\0,替换成临时变量中的第一个元素</strong></li> </ol> <h2> <a id="_39" rel="nofollow"></a>注意</h2> <ul> <li><strong>第三步和第五步不能反,必须是第三步在第五步前,否则就会变成b-a(a已经同f交换过),而达不到我们想要的效果</strong></li> <li><strong>接着,因为此处是递归,递归的两个基本条件,只满足了一个逐渐逼近条件,却没有写结束递归的条件</strong></li> </ul> <p><strong>这里递归的结束条件就是数组的长度要大于等于2,因为小于2的逆序没有意义.</strong></p> <p><strong>下面是代码</strong></p> <pre><code class="prism language-c"><span class="token keyword">void</span> <span class="token function">reverse_string</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	<span class="token keyword">char</span> temp<span class="token operator">=</span><span class="token operator">*</span>arr<span class="token punctuation">;</span><span class="token comment">//首元素存放好 </span> 	<span class="token keyword">int</span> len<span class="token operator">=</span><span class="token function">strlen</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token operator">*</span>arr<span class="token operator">=</span><span class="token operator">*</span><span class="token punctuation">(</span>arr<span class="token operator">+</span>len<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//最后一个元素到首位 </span> 	<span class="token operator">*</span><span class="token punctuation">(</span>arr<span class="token operator">+</span>len<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token string">'\0'</span><span class="token punctuation">;</span><span class="token comment">//最后一个元素等于\0,给定下次遍历的右范围 </span> 	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">strlen</span><span class="token punctuation">(</span>arr<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">&gt;=</span><span class="token number">2</span><span class="token punctuation">)</span> 	<span class="token punctuation">{<!-- --></span> 		<span class="token function">reverse_string</span><span class="token punctuation">(</span>arr<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//给定下次遍历的左范围 </span> 	<span class="token punctuation">}</span>	 	 	<span class="token operator">*</span><span class="token punctuation">(</span>arr<span class="token operator">+</span>len<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">=</span>temp<span class="token punctuation">;</span><span class="token comment">//把当前的最后元素,也就是\0,替换成首元素 </span> <span class="token punctuation">}</span> </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-30999.htm">聊城宠物店洗澡收费标准（一般的宠物店洗澡多少钱）</a></p>
+                                        <p>下一个：<a href="/news/article-31355.htm">SpringBoot实现热部署，修改代码不用重启服务</a></p>
                                     </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="we-create-cap">
-                                        <a href="/free-nodes/2024-8-21-free-node-subscribe-links.htm" class="xcblog-blog-url">
-                                            <h3 class="xcblog-blog-title">
-                                                「8月21日」最高速度22.1M/S，2024年Netch Github每天更新免费机场订阅节点链接                                            </h3>
-                                        </a>
-                                        <p>这一次的节点更新覆盖了韩国、美国、香港、欧洲、加拿大、新加坡、日本等地区,最高速度可达22.1 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
                                     </div>
-                                </div>
-                            </div>
-                                                        <div class="row item xcblog-blog-item" data-date="2024-08-20">
-                                <div class="col-md-3">
-                                    <div class="we-create-img">
-                                        <a href="/free-nodes/2024-8-20-free-netch-node.htm" class="xcblog-blog-url">
-                                            <img src="/uploads/20240819-2/560f004586c7c9e835da433c3b93f243.webp" alt="「8月20日」最高速度22.2M/S，2024年Netch Github每天更新免费机场订阅节点链接">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="we-create-cap">
-                                        <a href="/free-nodes/2024-8-20-free-netch-node.htm" class="xcblog-blog-url">
-                                            <h3 class="xcblog-blog-title">
-                                                「8月20日」最高速度22.2M/S，2024年Netch Github每天更新免费机场订阅节点链接                                            </h3>
-                                        </a>
-                                        <p>这一次的节点更新覆盖了香港、美国、欧洲、日本、韩国、加拿大、新加坡等地区,最高速度可达22.2 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
-                                    </div>
-                                </div>
-                            </div>
-                                                        <div class="row item xcblog-blog-item" data-date="2024-08-19">
-                                <div class="col-md-3">
-                                    <div class="we-create-img">
-                                        <a href="/free-nodes/2024-8-19-clash-meta-windows.htm" class="xcblog-blog-url">
-                                            <img src="/uploads/20240819-2/be7b2e526735dcb6de3af2d776e10dfb.webp" alt="「8月19日」最高速度20.6M/S，2024年Netch Github每天更新免费机场订阅节点链接">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="we-create-cap">
-                                        <a href="/free-nodes/2024-8-19-clash-meta-windows.htm" class="xcblog-blog-url">
-                                            <h3 class="xcblog-blog-title">
-                                                「8月19日」最高速度20.6M/S，2024年Netch Github每天更新免费机场订阅节点链接                                            </h3>
-                                        </a>
-                                        <p>这一次的节点更新覆盖了欧洲、美国、韩国、加拿大、新加坡、日本、香港等地区,最高速度可达20.6 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <ul class="pagination"><li><a href="/date/2024-08/">&laquo;</a></li> <li><a href="/date/2024-08/">1</a></li><li class="active"><span>2</span></li> <li class="disabled"><span>&raquo;</span></li></ul>                        </div>
-                    </div>
                     <div class="col-md-3">
                         <div class="panel panel-default">
     <div class="panel-heading">
@@ -176,16 +124,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-node-subscribe-links.htm" title="「12月17日」最高速度18.6M/S，2024年Netch Github每天更新免费机场订阅节点链接">「12月17日」最高速度18.6M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-6-share-netch-node.htm" title="「10月6日」最高速度18.9M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月6日」最高速度18.9M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-25378.htm" title="深度学习自定义自动求导函数">深度学习自定义自动求导函数</a></li>
-                        <li class="py-2"><a href="/news/article-21669.htm" title="宠物粮食名称（宠物粮创意名字）">宠物粮食名称（宠物粮创意名字）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-18-node-share.htm" title="「11月18日」最高速度20M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月18日」最高速度20M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-24-linux-netch-node.htm" title="「10月24日」最高速度22.9M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月24日」最高速度22.9M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-15-share-netch-node.htm" title="「9月15日」最高速度18.8M/S，2024年Netch Github每天更新免费机场订阅节点链接">「9月15日」最高速度18.8M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-26-share-netch-node.htm" title="「10月26日」最高速度22.9M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月26日」最高速度22.9M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-8-free-node-subscribe-links.htm" title="「9月8日」最高速度18.2M/S，2024年Netch Github每天更新免费机场订阅节点链接">「9月8日」最高速度18.2M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-19-free-node-subscribe.htm" title="「9月19日」最高速度18.1M/S，2024年Netch Github每天更新免费机场订阅节点链接">「9月19日」最高速度18.1M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-14-free-node-subscribe.htm" title="「12月14日」最高速度19M/S，2024年Netch Github每天更新免费机场订阅节点链接">「12月14日」最高速度19M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-12-free-netch-node.htm" title="「12月12日」最高速度22.7M/S，2024年Netch Github每天更新免费机场订阅节点链接">「12月12日」最高速度22.7M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
                         <li class="py-2"><a href="/news/article-23064.htm" title="被猫抓了一下红色划痕没破皮会得狂犬病吗（被猫抓了一下红色划痕没破皮会得狂犬病吗会传染吗）">被猫抓了一下红色划痕没破皮会得狂犬病吗（被猫抓了一下红色划痕没破皮会得狂犬病吗会传染吗）</a></li>
-                        <li class="py-2"><a href="/news/article-23065.htm" title="蜜雪加盟咨询电话（蜜雪加盟一般多少钱）">蜜雪加盟咨询电话（蜜雪加盟一般多少钱）</a></li>
-                        <li class="py-2"><a href="/news/article-24918.htm" title="宠物粮食店一年利润怎么样计算出来多少 宠物粮食店一年利润怎么样计算出来多少钱">宠物粮食店一年利润怎么样计算出来多少 宠物粮食店一年利润怎么样计算出来多少钱</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-19-clash-meta-windows.htm" title="「8月19日」最高速度20.6M/S，2024年Netch Github每天更新免费机场订阅节点链接">「8月19日」最高速度20.6M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-18-free-high-speed-nodes.htm" title="「10月18日」最高速度20M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月18日」最高速度20M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-21-free-node-subscribe.htm" title="「9月21日」最高速度22M/S，2024年Netch Github每天更新免费机场订阅节点链接">「9月21日」最高速度22M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-19-free-netch-node.htm" title="「10月19日」最高速度22.3M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月19日」最高速度22.3M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
                     </ul>
     </div>
 </div>
