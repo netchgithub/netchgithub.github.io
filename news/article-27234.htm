@@ -8,8 +8,36 @@
     <title>CUDA02 &#8211; 访存优化和Unified Memory</title>
         <meta name="description" content="前面一篇（传送门）简单介绍了CUDA的底层架构和一些线程调度方面的问题，但这只是整个CUDA的第一步，下一个问题在于数据的访存：包括数据以何种形式在CPU/GPU之间进行通信、迁移，以及在GPU内部进" />
         <link rel="icon" href="/assets/website/img/netchgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Netch Github节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://netchgithub.github.io/news/article-27234.htm" />
+    <meta property="og:site_name" content="Netch Github节点订阅官网" />
+    <meta property="og:title" content="CUDA02 &#8211; 访存优化和Unified Memory" />
+    <meta property="og:image" content="https://netchgithub.github.io/uploads/20240819-2/14e274918a2c4256d344c117353dcc05.webp" />
+        <meta property="og:release_date" content="2024-12-17T10:14:44" />
+    <meta property="og:updated_time" content="2024-12-17T10:14:44" />
+        <meta property="og:description" content="前面一篇（传送门）简单介绍了CUDA的底层架构和一些线程调度方面的问题，但这只是整个CUDA的第一步，下一个问题在于数据的访存：包括数据以何种形式在CPU/GPU之间进行通信、迁移，以及在GPU内部进" />
+        
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="CUDA02 &#8211; 访存优化和Unified Memory">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
     <!-- CSS here -->
     <link rel="stylesheet" href="/assets/website/css/netchgithub/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/website/css/netchgithub/owl.carousel.min.css">
@@ -124,16 +152,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-10-28-free-netch-node.htm" title="「10月28日」最高速度20.6M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月28日」最高速度20.6M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-29-free-node-subscribe.htm" title="「9月29日」最高速度19.3M/S，2024年Netch Github每天更新免费机场订阅节点链接">「9月29日」最高速度19.3M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-1-linux-netch-node.htm" title="「12月1日」最高速度21.5M/S，2024年Netch Github每天更新免费机场订阅节点链接">「12月1日」最高速度21.5M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-28-free-node-subscribe-links.htm" title="「8月28日」最高速度22M/S，2024年Netch Github每天更新免费机场订阅节点链接">「8月28日」最高速度22M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-17-netch-node.htm" title="「11月17日」最高速度19.8M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月17日」最高速度19.8M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-22-free-netch-node.htm" title="「11月22日」最高速度18.2M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月22日」最高速度18.2M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-26-free-subscribe-node.htm" title="「9月26日」最高速度20.1M/S，2024年Netch Github每天更新免费机场订阅节点链接">「9月26日」最高速度20.1M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-3-free-netch-node.htm" title="「10月3日」最高速度18.7M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月3日」最高速度18.7M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-11-share-netch-node.htm" title="「10月11日」最高速度18.3M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月11日」最高速度18.3M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-2-node-share.htm" title="「10月2日」最高速度22.6M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月2日」最高速度22.6M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-free-netch-node.htm" title="「11月6日」最高速度19.9M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月6日」最高速度19.9M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-22609.htm" title="上海免费领养猫咪的地方（上海免费领养猫咪的地方有哪些）">上海免费领养猫咪的地方（上海免费领养猫咪的地方有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-27710.htm" title="动物接种疫苗的方法有哪些种类（动物接种途径有哪些）">动物接种疫苗的方法有哪些种类（动物接种途径有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-30999.htm" title="聊城宠物店洗澡收费标准（一般的宠物店洗澡多少钱）">聊城宠物店洗澡收费标准（一般的宠物店洗澡多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-42644.htm" title="厦门宠物狗领养公司（厦门宠物狗领养公司有哪些）">厦门宠物狗领养公司（厦门宠物狗领养公司有哪些）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-5-free-high-speed-nodes.htm" title="「11月5日」最高速度21.2M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月5日」最高速度21.2M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-49589.htm" title="全国宠物领养中心地址电话（全国宠物领养全国宠物赠送）">全国宠物领养中心地址电话（全国宠物领养全国宠物赠送）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-30-free-node-subscribe-links.htm" title="「1月30日」最高速度21.2M/S，2025年Netch每天更新免费机场订阅节点链接">「1月30日」最高速度21.2M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-21669.htm" title="宠物粮食名称（宠物粮创意名字）">宠物粮食名称（宠物粮创意名字）</a></li>
+                        <li class="py-2"><a href="/news/article-36134.htm" title="java的Integer中也会有缓存">java的Integer中也会有缓存</a></li>
                     </ul>
     </div>
 </div>
@@ -145,22 +173,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>

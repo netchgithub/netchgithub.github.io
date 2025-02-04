@@ -8,8 +8,36 @@
     <title>Vue3实践setup函数详解</title>
         <meta name="description" content="setup() 函数是Vue3.0中，专门为组件提供的新属性。它为基于Composition API 的新特性提供了统一的入口。 在Vue3中，定义methods、watch、computed、dat" />
         <link rel="icon" href="/assets/website/img/netchgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Netch Github节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://netchgithub.github.io/news/article-28168.htm" />
+    <meta property="og:site_name" content="Netch Github节点订阅官网" />
+    <meta property="og:title" content="Vue3实践setup函数详解" />
+    <meta property="og:image" content="https://netchgithub.github.io/uploads/20240819-2/883a037b94215465892f39054dc193bd.webp" />
+        <meta property="og:release_date" content="2024-12-19T09:55:54" />
+    <meta property="og:updated_time" content="2024-12-19T09:55:54" />
+        <meta property="og:description" content="setup() 函数是Vue3.0中，专门为组件提供的新属性。它为基于Composition API 的新特性提供了统一的入口。 在Vue3中，定义methods、watch、computed、dat" />
+        
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Vue3实践setup函数详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
     <!-- CSS here -->
     <link rel="stylesheet" href="/assets/website/css/netchgithub/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/website/css/netchgithub/owl.carousel.min.css">
@@ -124,16 +152,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-23-share-netch-node.htm" title="「11月23日」最高速度21.8M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月23日」最高速度21.8M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-20317.htm" title="三国杀里面限定技可以用几次（三国杀里面的限定技只能用一次吗）">三国杀里面限定技可以用几次（三国杀里面的限定技只能用一次吗）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-17-netch-node.htm" title="「11月17日」最高速度19.8M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月17日」最高速度19.8M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-15-share-netch-node.htm" title="「10月15日」最高速度18.4M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月15日」最高速度18.4M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-7-share-netch-node.htm" title="「11月7日」最高速度18.1M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月7日」最高速度18.1M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-25841.htm" title="一文详解微服务架构">一文详解微服务架构</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-11-node-share-links.htm" title="「9月11日」最高速度21.4M/S，2024年Netch Github每天更新免费机场订阅节点链接">「9月11日」最高速度21.4M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-12-linux-netch-node.htm" title="「11月12日」最高速度21.9M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月12日」最高速度21.9M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-25842.htm" title="养猫的人容易得什么病视频讲解（养猫咪的人会得什么病）">养猫的人容易得什么病视频讲解（养猫咪的人会得什么病）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-26-share-netch-node.htm" title="「10月26日」最高速度22.9M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月26日」最高速度22.9M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-39669.htm" title="Python数据展示 &#8211; 生成表格图片">Python数据展示 &#8211; 生成表格图片</a></li>
+                        <li class="py-2"><a href="/news/article-36723.htm" title="常用注解使用总结系列: @Order 注解">常用注解使用总结系列: @Order 注解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-29-share-netch-node.htm" title="「1月29日」最高速度18.2M/S，2025年Netch每天更新免费机场订阅节点链接">「1月29日」最高速度18.2M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-39670.htm" title="动物医院有公立的吗还是私立医院的 动物医院有公立的吗还是私立医院的好">动物医院有公立的吗还是私立医院的 动物医院有公立的吗还是私立医院的好</a></li>
+                        <li class="py-2"><a href="/news/article-31967.htm" title="青岛宠物医生招聘（青岛宠物医生培训学校）">青岛宠物医生招聘（青岛宠物医生培训学校）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-10-free-node-subscribe-links.htm" title="「1月10日」最高速度18.8M/S，2025年Netch每天更新免费机场订阅节点链接">「1月10日」最高速度18.8M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-32440.htm" title="动物疫苗采购流程及标准（动物疫苗采购流程及标准规定）">动物疫苗采购流程及标准（动物疫苗采购流程及标准规定）</a></li>
+                        <li class="py-2"><a href="/news/article-47129.htm" title="宠物粮行业淡季是几月份开始 宠物粮行业淡季是几月份开始的">宠物粮行业淡季是几月份开始 宠物粮行业淡季是几月份开始的</a></li>
+                        <li class="py-2"><a href="/news/article-23065.htm" title="蜜雪加盟咨询电话（蜜雪加盟一般多少钱）">蜜雪加盟咨询电话（蜜雪加盟一般多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-30002.htm" title="农大动物医院医生排班（农大动物医院 挂号）">农大动物医院医生排班（农大动物医院 挂号）</a></li>
                     </ul>
     </div>
 </div>
@@ -145,22 +173,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>

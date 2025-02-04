@@ -8,8 +8,36 @@
     <title>Golang错误处理机制（error 与 panic）</title>
         <meta name="description" content="文章目录    一、概述 二、error 三、panic      一、概述 Go语言并没有像Java那样的try catch finally 的处理机制，而是提供了其特有的错误处理机制。在Go语言中" />
         <link rel="icon" href="/assets/website/img/netchgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Netch Github节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://netchgithub.github.io/news/article-27233.htm" />
+    <meta property="og:site_name" content="Netch Github节点订阅官网" />
+    <meta property="og:title" content="Golang错误处理机制（error 与 panic）" />
+    <meta property="og:image" content="https://netchgithub.github.io/uploads/20240819-2/e6d729c6931c16dd14e9748fe1efbdc5.webp" />
+        <meta property="og:release_date" content="2024-12-17T10:14:44" />
+    <meta property="og:updated_time" content="2024-12-17T10:14:44" />
+        <meta property="og:description" content="文章目录    一、概述 二、error 三、panic      一、概述 Go语言并没有像Java那样的try catch finally 的处理机制，而是提供了其特有的错误处理机制。在Go语言中" />
+        
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Golang错误处理机制（error 与 panic）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
     <!-- CSS here -->
     <link rel="stylesheet" href="/assets/website/css/netchgithub/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/website/css/netchgithub/owl.carousel.min.css">
@@ -124,16 +152,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-12-14-free-node-subscribe.htm" title="「12月14日」最高速度19M/S，2024年Netch Github每天更新免费机场订阅节点链接">「12月14日」最高速度19M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-20315.htm" title="国内动物疫苗龙头企业名单公示 国内动物疫苗龙头企业名单公示最新">国内动物疫苗龙头企业名单公示 国内动物疫苗龙头企业名单公示最新</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-17-netch-node.htm" title="「11月17日」最高速度19.8M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月17日」最高速度19.8M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-9-linux-netch-node.htm" title="「11月9日」最高速度22.1M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月9日」最高速度22.1M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-19-free-netch-node.htm" title="「10月19日」最高速度22.3M/S，2024年Netch Github每天更新免费机场订阅节点链接">「10月19日」最高速度22.3M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-33362.htm" title="动物接种疫苗的方法有哪些 动物接种疫苗的方法有哪些种类">动物接种疫苗的方法有哪些 动物接种疫苗的方法有哪些种类</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-29-free-subscribe-node.htm" title="「8月29日」最高速度20.9M/S，2024年Netch Github每天更新免费机场订阅节点链接">「8月29日」最高速度20.9M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-5-linux-netch-node.htm" title="「9月5日」最高速度18.9M/S，2024年Netch Github每天更新免费机场订阅节点链接">「9月5日」最高速度18.9M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-30-netch-node.htm" title="「8月30日」最高速度22.1M/S，2024年Netch Github每天更新免费机场订阅节点链接">「8月30日」最高速度22.1M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-11-free-netch-node.htm" title="「11月11日」最高速度18.4M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月11日」最高速度18.4M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-free-netch.htm" title="「11月14日」最高速度19M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月14日」最高速度19M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-42643.htm" title="兽医防疫简报范文（兽医开展工作简报）">兽医防疫简报范文（兽医开展工作简报）</a></li>
+                        <li class="py-2"><a href="/news/article-44201.htm" title="Spring Boot Admin 的使用">Spring Boot Admin 的使用</a></li>
+                        <li class="py-2"><a href="/news/article-36725.htm" title="宠物领养协议书范本免费版大全图片（宠物领养协议免费下载）">宠物领养协议书范本免费版大全图片（宠物领养协议免费下载）</a></li>
+                        <li class="py-2"><a href="/news/article-40666.htm" title="Vuex用法及封装">Vuex用法及封装</a></li>
+                        <li class="py-2"><a href="/news/article-38684.htm" title="宠物医院收费价目表2022年8月（宠物医院收费价目表2022年8月）">宠物医院收费价目表2022年8月（宠物医院收费价目表2022年8月）</a></li>
+                        <li class="py-2"><a href="/news/article-41170.htm" title="修改docker容器的存储路径">修改docker容器的存储路径</a></li>
+                        <li class="py-2"><a href="/news/article-35082.htm" title="开宠物店需要干什么（开宠物店需要准备什么?）">开宠物店需要干什么（开宠物店需要准备什么?）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-17-free-netch.htm" title="「1月17日」最高速度20.3M/S，2025年Netch每天更新免费机场订阅节点链接">「1月17日」最高速度20.3M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-5-node-share.htm" title="「1月5日」最高速度18.9M/S，2025年Netch每天更新免费机场订阅节点链接">「1月5日」最高速度18.9M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
                     </ul>
     </div>
 </div>
@@ -145,22 +173,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
