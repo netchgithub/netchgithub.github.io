@@ -98,10 +98,9 @@
                                                                                 <li><a href="/"> 首页</a></li>
                                                                                 <li><a href="/free-nodes/"> 免费节点</a></li>
                                                                                 <li><a href="/paid-subscribe/"> 推荐机场</a></li>
+                                                                                <li><a href="/client.htm"> 客户端</a></li>
                                                                                 <li><a href="/news/"> 新闻资讯</a></li>
-                                                                                <li><a href="#">关于</a></li>
-                                        <li><a href="#">联系</a></li>
-                                    </ul>
+                                                                            </ul>
                                 </nav>
                             </div>
                         </div>
@@ -142,6 +141,7 @@
                   				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2><a id="_0" rel="nofollow"></a>一、数据库事务的四大特性</h2> <p>事物是指作为一个单元的一组有序的数据库操作，单元是不可分割的，如果一组数据的所有操作都执行成功，事物完成，进行事物提交(commit)，其修改作用于所有数据库进程。有一个操作执行失败，事务执行失败进行回滚（rollback)，该事务所有操作的影响被取消；</p> <h3><a id="Atomicity_2" rel="nofollow"></a>原子性（Atomicity）</h3> <p>事物的操作要么全部执行成功提交，要么全部失败进行事物回滚，执行成功，对数据的改变将作用于其它数据库，执行失败，将不对其它数据库产生影响；</p> <h3><a id="Consistency_4" rel="nofollow"></a>一致性（Consistency）</h3> <p>事务的执行使数据库从一个状态到另一个状态，状态必须保持一致性，比如两个人进行转账，两个的总金额是1000，不过他们进行了多少次转账（事务），两个人的总额1000是不变的，这就是一致性状态；</p> <h3><a id="Osolation_6" rel="nofollow"></a>持久性（Osolation）</h3> <p>事务执行成功，对数据库数据的修改是永久性的，即使服务器宕机，也不会丢失已提交事务的操作；</p> <h3><a id="durability_8" rel="nofollow"></a>隔离性（durability）</h3> <p>多个线程并行对表执行事务，每个事务对其它事务都是隔离互不影响的，比如有两个线程A和B对同一数据S进行事务执行，线程A在获取数据S时，线程B的事务要么已经提交结束，要么还未执行</p> <h2><a id="_11" rel="nofollow"></a>二、事务四个隔离级别</h2> <p>数据库隔离的四个级别分别是：1、读取未提交；2、读取已提交；3、可重读；4、可串行化。隔离级别采取不同的锁类型来实现，若读取的是同一个数据可能发生脏读、幻读等问题</p> <h3><a id="Read_Uncommitted_13" rel="nofollow"></a>读未提交（Read Uncommitted）</h3> <p>在该隔离级别，所有事物都可以看到其它事务未提交的执行结果，事务可读取其它事务未提交的数据；也就是“脏读”</p> <h3><a id="Read_Committed_15" rel="nofollow"></a>读已提交（Read Committed）</h3> <p>事务只能看见其它事务已经提交的结果数据，在执行查询操作期间，同一事务的其它操作可能在这一操作期间进行了commit，到查询的结果集和上次查询的结果集不一样，也就是“不可重复读”</p> <h3><a id="_repeatable_Read_18" rel="nofollow"></a>可重复读 （repeatable Read）</h3> <p>MySql的默认隔离级别，保证同一事务的不同操作在并发读取的行数据是一样的。在事务读取某一范围的数据期间，不保证其它事务对该范围写入新行，造成事务下次查询的时候，多了新的数据行，也就是所谓的**“幻读”**，Innodb通过版本控制解决了这一问题。</p> <h3><a id="Serializable_20" rel="nofollow"></a>序列化（Serializable）</h3> <p>隔离的最高级别，通过强制让事务有序执行，解决幻读等问题。事务执行期间，对每个数据行加了共享锁，可能会引起其它事务查询超时等现象;</p> <h2><a id="_23" rel="nofollow"></a>三、脏读、幻读、不可重复读</h2> <h3><a id="Drity_Read__24" rel="nofollow"></a>脏读（Drity Read ）</h3> <p>事务读取了其它事务执行未提交的数据行</p> <h3><a id="Phantom_Read_27" rel="nofollow"></a>幻读（Phantom Read）</h3> <p>事务在检索期间，其它事物是数据执行了更新操作，导致前后两次检索的数据不一样</p> <h3><a id="_Nonrepeatable_Read_30" rel="nofollow"></a>不可重复度 （Nonrepeatable Read）</h3> <p>事物在检索期间，同一事物的不同操作（实例）对数据行修改后进行了commit，导致前后检索的数据行不一致</p> <h3><a id="_34" rel="nofollow"></a>与隔离级别的关系</h3> <table> <thead> <tr> <th>隔离级别</th> <th>脏读</th> <th>不可重复读</th> <th>幻读</th> </tr> </thead> <tbody> <tr> <td>读未提交</td> <td>+</td> <td>+</td> <td>+</td> </tr> <tr> <td>读已提交</td> <td>x</td> <td>+</td> <td>+</td> </tr> <tr> <td>可重复读</td> <td>x</td> <td>x</td> <td>+</td> </tr> <tr> <td>可序列化</td> <td>x</td> <td>x</td> <td>x</td> </tr> </tbody> </table> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-52741.htm">如何过滤掉MySQL返回的结果集的行中的重复项？</a></p>
+                                        <p>下一个：<a href="/news/article-53283.htm">宠物医院好评模板100字怎么写的 宠物医院好评模板100字怎么写的啊</a></p>
                                     </div>
                                     </div>
                     <div class="col-md-3">
@@ -151,15 +151,15 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-node-subscribe-links.htm" title="「11月13日」最高速度21M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月13日」最高速度21M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-47128.htm" title="动物疫苗公司排名前十名是什么（国内动物疫苗龙头企业）">动物疫苗公司排名前十名是什么（国内动物疫苗龙头企业）</a></li>
-                        <li class="py-2"><a href="/news/article-45134.htm" title="机器制作狗粮的配方大全图片（机器制作狗粮的配方大全图片高清）">机器制作狗粮的配方大全图片（机器制作狗粮的配方大全图片高清）</a></li>
-                        <li class="py-2"><a href="/news/article-48450.htm" title="拼多多无货源网店是真的吗不会被骗吗（拼多多无货源网店合法吗）">拼多多无货源网店是真的吗不会被骗吗（拼多多无货源网店合法吗）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-18-free-node-subscribe.htm" title="「1月18日」最高速度18.2M/S，2025年Netch每天更新免费机场订阅节点链接">「1月18日」最高速度18.2M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-23541.htm" title="玫瑰花茶哪个牌子好,哪里的玫瑰花茶最好喝(玫瑰花茶哪个牌子好,哪里的玫瑰花茶最好)">玫瑰花茶哪个牌子好,哪里的玫瑰花茶最好喝(玫瑰花茶哪个牌子好,哪里的玫瑰花茶最好)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-free-node-subscribe.htm" title="「1月12日」最高速度19.7M/S，2025年Netch每天更新免费机场订阅节点链接">「1月12日」最高速度19.7M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-node-share-links.htm" title="「1月13日」最高速度19.9M/S，2025年Netch每天更新免费机场订阅节点链接">「1月13日」最高速度19.9M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
                         <li class="py-2"><a href="/news/article-18956.htm" title="开一家宠物食品店怎么样 开一家宠物食品店怎么样呢">开一家宠物食品店怎么样 开一家宠物食品店怎么样呢</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-3-free-netch-node.htm" title="「1月3日」最高速度22.4M/S，2025年Netch每天更新免费机场订阅节点链接">「1月3日」最高速度22.4M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-11-node-share-links.htm" title="「12月11日」最高速度20.9M/S，2024年Netch Github每天更新免费机场订阅节点链接">「12月11日」最高速度20.9M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-37206.htm" title="宠物打疫苗不能洗澡的原因是什么（宠物打疫苗不能吃什么）">宠物打疫苗不能洗澡的原因是什么（宠物打疫苗不能吃什么）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-6-netch-node.htm" title="「12月6日」最高速度21M/S，2024年Netch Github每天更新免费机场订阅节点链接">「12月6日」最高速度21M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-node-subscribe-links.htm" title="「11月13日」最高速度21M/S，2024年Netch Github每天更新免费机场订阅节点链接">「11月13日」最高速度21M/S，2024年Netch Github每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-free-netch-node.htm" title="「12月25日」最高速度21.4M/S，2024年Netch每天更新免费机场订阅节点链接">「12月25日」最高速度21.4M/S，2024年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-46610.htm" title="宠物领养机构现状调查（宠物领养机构现状调查分析）">宠物领养机构现状调查（宠物领养机构现状调查分析）</a></li>
+                        <li class="py-2"><a href="/news/article-25378.htm" title="深度学习自定义自动求导函数">深度学习自定义自动求导函数</a></li>
                         <li class="py-2"><a href="/news/article-42643.htm" title="兽医防疫简报范文（兽医开展工作简报）">兽医防疫简报范文（兽医开展工作简报）</a></li>
                     </ul>
     </div>
@@ -172,7 +172,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
