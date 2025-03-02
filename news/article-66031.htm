@@ -1,0 +1,266 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://netchgithub.github.io/news/article-66031.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>橙子&#8211;python字典的增删改查与集合的增删改查</title>
+        <meta name="description" content="橙子--python字典的增删改查与集合的增删改查  字典   字典的增 字典的删 字典的改 字典的查   集合   集合的增 集合的删 集合的改 集合的查       字典的增 字典名[‘新的键名’" />
+        <link rel="icon" href="/assets/website/img/netchgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Netch Github节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://netchgithub.github.io/news/article-66031.htm" />
+    <meta property="og:site_name" content="Netch Github节点订阅官网" />
+    <meta property="og:title" content="橙子&#8211;python字典的增删改查与集合的增删改查" />
+    <meta property="og:image" content="https://netchgithub.github.io/uploads/20240819-2/be7b2e526735dcb6de3af2d776e10dfb.webp" />
+        <meta property="og:release_date" content="2025-03-02T09:39:01" />
+    <meta property="og:updated_time" content="2025-03-02T09:39:01" />
+        <meta property="og:description" content="橙子--python字典的增删改查与集合的增删改查  字典   字典的增 字典的删 字典的改 字典的查   集合   集合的增 集合的删 集合的改 集合的查       字典的增 字典名[‘新的键名’" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="橙子&#8211;python字典的增删改查与集合的增删改查">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/slicknav.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/themify-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/slick.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPZ6L4HTT1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WPZ6L4HTT1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="/assets/website/img/netchgithub/logo/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparrent ">
+            <div class="main-header header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-md-4">
+                            <div class="logo">
+                                <a href="/">
+                                                                <span>Netch Github</span>
+                                                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8">
+                            <!-- Main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                                                                <li><a href="/"> 首页</a></li>
+                                                                                <li><a href="/free-nodes/"> 免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/"> 推荐机场</a></li>
+                                                                                <li><a href="/client.htm"> 客户端</a></li>
+                                                                                <li><a href="/news/"> 新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!-- Slider Area Start-->
+        <div class="services-area">
+            <div class="container">
+                <!-- Section-tittle -->
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-tittle text-center mb-80">
+                            <h1>橙子&#8211;python字典的增删改查与集合的增删改查</h1>
+                            <p>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Area End-->
+        <!-- We Create Start -->
+        <div class="we-create-area create-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>橙子--python字典的增删改查与集合的增删改查</h3> <ul> <li><a href="#_1" rel="nofollow">字典</a></li> <li> <ul> <li><a href="#_2" rel="nofollow">字典的增</a></li> <li><a href="#_15" rel="nofollow">字典的删</a></li> <li><a href="#_40" rel="nofollow">字典的改</a></li> <li><a href="#_50" rel="nofollow">字典的查</a></li> </ul> </li> <li><a href="#_104" rel="nofollow">集合</a></li> <li> <ul> <li><a href="#_105" rel="nofollow">集合的增</a></li> <li><a href="#_146" rel="nofollow">集合的删</a></li> <li><a href="#_161" rel="nofollow">集合的改</a></li> <li><a href="#_164" rel="nofollow">集合的查</a></li> </ul> </li> </ul> </div> </h1> <h2> <a id="_2" rel="nofollow"></a>字典的增</h2> <p>字典名[‘新的键名’]=’值‘</p> <pre><code class="prism language-python"><span class="token comment">####字典的增加</span>  a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'苹果'</span><span class="token punctuation">:</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'橙子'</span><span class="token punctuation">:</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'芒果'</span><span class="token punctuation">:</span><span class="token string">'mango'</span><span class="token punctuation">,</span><span class="token string">'香蕉'</span><span class="token punctuation">:</span><span class="token string">'banana'</span><span class="token punctuation">}</span>  a<span class="token punctuation">[</span><span class="token string">"奇异果"</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"kiwi"</span>  <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">#会输出{'苹果': 'apple', '橙子': 'orange', '芒果': 'mango', '香蕉': 'banana', '奇异果': 'kiwi'}</span> </code></pre> <h2> <a id="_15" rel="nofollow"></a>字典的删</h2> <p>①删除字典中的某个值：del 字典名[“要删除的键名”]<br /> ②删除整个字典：del 字典名<br /> ③删除字典中所有内容，但不删除字典：字典名.clear()。表示清空字典，字典还在，只不过里面什么也没有</p> <pre><code class="prism language-python"><span class="token comment">#①删除字典中的某个值：del 字典名["要删除的键名"]</span> a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'苹果'</span><span class="token punctuation">:</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'橙子'</span><span class="token punctuation">:</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'芒果'</span><span class="token punctuation">:</span><span class="token string">'mango'</span><span class="token punctuation">,</span><span class="token string">'香蕉'</span><span class="token punctuation">:</span><span class="token string">'banana'</span><span class="token punctuation">}</span> <span class="token keyword">del</span> a<span class="token punctuation">[</span><span class="token string">"苹果"</span><span class="token punctuation">]</span>  <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">#会输出：{'橙子': 'orange', '芒果': 'mango', '香蕉': 'banana'}</span>   <span class="token comment">#②删除整个字典：del 字典名</span> a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'苹果'</span><span class="token punctuation">:</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'橙子'</span><span class="token punctuation">:</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'芒果'</span><span class="token punctuation">:</span><span class="token string">'mango'</span><span class="token punctuation">,</span><span class="token string">'香蕉'</span><span class="token punctuation">:</span><span class="token string">'banana'</span><span class="token punctuation">}</span> <span class="token keyword">del</span> a   <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token comment">###会报错，因为字典已经被删除</span>  <span class="token comment">#③删除字典中所有内容，但不删除字典：字典名.clear()</span> a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'苹果'</span><span class="token punctuation">:</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'橙子'</span><span class="token punctuation">:</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'芒果'</span><span class="token punctuation">:</span><span class="token string">'mango'</span><span class="token punctuation">,</span><span class="token string">'香蕉'</span><span class="token punctuation">:</span><span class="token string">'banana'</span><span class="token punctuation">}</span> a<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#clear()：表示清空字典，字典还在，只不过里面什么也没有</span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token comment">#会输出：{}，一个空字典</span> </code></pre> <h2> <a id="_40" rel="nofollow"></a>字典的改</h2> <p>字典名[“要修改的键名”]=“新的值”</p> <pre><code class="prism language-python">a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'苹果'</span><span class="token punctuation">:</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'橙子'</span><span class="token punctuation">:</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'芒果'</span><span class="token punctuation">:</span><span class="token string">'mango'</span><span class="token punctuation">,</span><span class="token string">'香蕉'</span><span class="token punctuation">:</span><span class="token string">'banana'</span><span class="token punctuation">}</span> a<span class="token punctuation">[</span><span class="token string">"橙子"</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"ORANGE"</span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">#会输出：{'苹果': 'apple', '橙子': 'ORANGE', '芒果': 'mango', '香蕉': 'banana'}</span> </code></pre> <h2> <a id="_50" rel="nofollow"></a>字典的查</h2> <p>①已知键名，查询值：print(字典名[“键名”])<br /> ②get()函数：字典名.get(键名，自定义值)，自定义值可以不设置，不设置的时候若键值不存在则不返回任何数据，设置后若键值不存在则返回自定义值。<br /> ③查询所有的键名：字典名.keys()<br /> ④查询所有的值：字典名.values()<br /> ⑤查询所有的键值对：字典名.items()</p> <pre><code class="prism language-python"><span class="token comment">#①已知键名，查询值：print(字典名["键名"])</span> a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'苹果'</span><span class="token punctuation">:</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'橙子'</span><span class="token punctuation">:</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'芒果'</span><span class="token punctuation">:</span><span class="token string">'mango'</span><span class="token punctuation">,</span><span class="token string">'香蕉'</span><span class="token punctuation">:</span><span class="token string">'banana'</span><span class="token punctuation">}</span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token string">"橙子"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#会返回orange</span>  <span class="token comment">#②get()函数：字典名.get(键名，自定义值)，自定义值可以不设置，不设置的时候若键值不存在则不返回任何数据，设置后若键值不存在则返回自定义值。</span> b<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'苹果'</span><span class="token punctuation">:</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'橙子'</span><span class="token punctuation">:</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'芒果'</span><span class="token punctuation">:</span><span class="token string">'mango'</span><span class="token punctuation">,</span><span class="token string">'香蕉'</span><span class="token punctuation">:</span><span class="token string">'banana'</span><span class="token punctuation">}</span> b<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'橙子'</span><span class="token punctuation">)</span> <span class="token comment">#会返回'orange'</span> b<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'苹果'</span><span class="token punctuation">:</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'橙子'</span><span class="token punctuation">:</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'芒果'</span><span class="token punctuation">:</span><span class="token string">'mango'</span><span class="token punctuation">,</span><span class="token string">'香蕉'</span><span class="token punctuation">:</span><span class="token string">'banana'</span><span class="token punctuation">}</span> b<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'奇异果'</span><span class="token punctuation">,</span><span class="token string">"无"</span><span class="token punctuation">)</span> <span class="token comment">#会返回“无”，因为字典中没有“奇异果”这个键，所以会返回自定义值</span>  <span class="token comment">#③查询所有的键名：字典名.keys()</span> a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'苹果'</span><span class="token punctuation">:</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'橙子'</span><span class="token punctuation">:</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'芒果'</span><span class="token punctuation">:</span><span class="token string">'mango'</span><span class="token punctuation">,</span><span class="token string">'香蕉'</span><span class="token punctuation">:</span><span class="token string">'banana'</span><span class="token punctuation">}</span> a<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#会返回dict_keys(['苹果', '橙子', '芒果', '香蕉'])</span>  <span class="token comment">#for循环遍历所有键</span> a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'苹果'</span><span class="token punctuation">:</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'橙子'</span><span class="token punctuation">:</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'芒果'</span><span class="token punctuation">:</span><span class="token string">'mango'</span><span class="token punctuation">,</span><span class="token string">'香蕉'</span><span class="token punctuation">:</span><span class="token string">'banana'</span><span class="token punctuation">}</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> a<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">#会返回：苹果 橙子 芒果 香蕉</span>  <span class="token comment">#④查询所有的值：字典名.values()</span> a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'苹果'</span><span class="token punctuation">:</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'橙子'</span><span class="token punctuation">:</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'芒果'</span><span class="token punctuation">:</span><span class="token string">'mango'</span><span class="token punctuation">,</span><span class="token string">'香蕉'</span><span class="token punctuation">:</span><span class="token string">'banana'</span><span class="token punctuation">}</span> a<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#会返回：dict_values(['apple', 'orange', 'mango', 'banana'])</span>  <span class="token comment">#for循环遍历所有值</span> a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'苹果'</span><span class="token punctuation">:</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'橙子'</span><span class="token punctuation">:</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'芒果'</span><span class="token punctuation">:</span><span class="token string">'mango'</span><span class="token punctuation">,</span><span class="token string">'香蕉'</span><span class="token punctuation">:</span><span class="token string">'banana'</span><span class="token punctuation">}</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> a<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">#会返回：apple orange mango banana</span>  <span class="token comment">#⑤查询所有的键值对：字典名.items()</span> a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'苹果'</span><span class="token punctuation">:</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'橙子'</span><span class="token punctuation">:</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'芒果'</span><span class="token punctuation">:</span><span class="token string">'mango'</span><span class="token punctuation">,</span><span class="token string">'香蕉'</span><span class="token punctuation">:</span><span class="token string">'banana'</span><span class="token punctuation">}</span> a<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#会返回：dict_items([('苹果', 'apple'), ('橙子', 'orange'), ('芒果', 'mango'), ('香蕉', 'banana')])</span>  <span class="token comment">#for循环遍历所有键值对</span> a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'苹果'</span><span class="token punctuation">:</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'橙子'</span><span class="token punctuation">:</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'芒果'</span><span class="token punctuation">:</span><span class="token string">'mango'</span><span class="token punctuation">,</span><span class="token string">'香蕉'</span><span class="token punctuation">:</span><span class="token string">'banana'</span><span class="token punctuation">}</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> a<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">#会返回：('苹果', 'apple') ('橙子', 'orange') ('芒果', 'mango') ('香蕉', 'banana')</span> </code></pre> </h1> <h2> <a id="_105" rel="nofollow"></a>集合的增</h2> <p>集合有自动去除重复值的功能，集合内的值也是随机分布的，所以不支持使用索引<br /> ①增加单个数据值：集合.add(值)<br /> ②增加多个数据值：集合名.update()。括号里可以是列表、元组或字符串<br /> 增加集合中存在的值，集合不发生变化，因为集合有自动去除重复值的功能。</p> <pre><code class="prism language-python"><span class="token comment">#创建集合</span> a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'banana'</span><span class="token punctuation">,</span><span class="token string">'mango'</span><span class="token punctuation">}</span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment">#会输出：{'mango', 'orange', 'banana', 'apple'}</span> <span class="token comment">#集合会自动去除其中重复的值，只保留一个，并且集合内的值是随机的，因此不支持使用索引进行查询</span>  a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'banana'</span><span class="token punctuation">,</span><span class="token string">'mango'</span><span class="token punctuation">}</span> a<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token string">'banana'</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">#会输出：{'mango', 'orange', 'banana', 'apple'}</span> <span class="token comment">#增加集合中存在的值，集合不发生变化，因为集合有自动去除重复值的功能</span>  a<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token string">"kiwi"</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">#会输出：{'mango', 'banana', 'kiwi', 'orange', 'apple'}</span> <span class="token comment">###集合发生变化，且值的位置是随机的</span>  <span class="token comment">#集合增加多个数据</span> a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'banana'</span><span class="token punctuation">,</span><span class="token string">'mango'</span><span class="token punctuation">}</span> a<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">,</span><span class="token string">'d'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">#会输出：{'mango', 'banana', 'b', 'orange', 'c', 'a', 'd', 'apple'}</span>  a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'banana'</span><span class="token punctuation">,</span><span class="token string">'mango'</span><span class="token punctuation">}</span> a<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token string">'abcd'</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">#会输出：{'mango', 'banana', 'b', 'orange', 'c', 'a', 'd', 'apple'}</span>  a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'banana'</span><span class="token punctuation">,</span><span class="token string">'mango'</span><span class="token punctuation">}</span> a<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">,</span><span class="token string">'d'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">#会输出：{'mango', 'banana', 'b', 'orange', 'c', 'a', 'd', 'apple'}</span>  </code></pre> <h2> <a id="_146" rel="nofollow"></a>集合的删</h2> <p>①删除具体的值：集合名.remove(‘要删的值’)<br /> ②随机删除：集合名.pop()</p> <pre><code class="prism language-python">a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'banana'</span><span class="token punctuation">,</span><span class="token string">'mango'</span><span class="token punctuation">}</span> a<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'apple'</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">#会输出：{'mango', 'orange', 'banana'}</span>  a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'banana'</span><span class="token punctuation">,</span><span class="token string">'mango'</span><span class="token punctuation">}</span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">#会输出{'mango', 'orange', 'banana', 'apple'}</span> a<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#会返回：'mango'</span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token comment">#会输出{'orange', 'banana', 'apple'}</span> </code></pre> <h2> <a id="_161" rel="nofollow"></a>集合的改</h2> <p>可以将要修改的值删除，然后增加替换的值</p> <h2> <a id="_164" rel="nofollow"></a>集合的查</h2> <p>集合的查用in 与 not in<br /> 返回true 和 false</p> <pre><code class="prism language-python">a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'banana'</span><span class="token punctuation">,</span><span class="token string">'mango'</span><span class="token punctuation">}</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'orange'</span> <span class="token keyword">in</span> a<span class="token punctuation">)</span><span class="token comment">#orange在集合中，就返回True</span> <span class="token comment">#返回:True</span>  a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'banana'</span><span class="token punctuation">,</span><span class="token string">'mango'</span><span class="token punctuation">}</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'kiwi'</span> <span class="token keyword">in</span> a<span class="token punctuation">)</span><span class="token comment">#kiwi不在集合中，返回false</span> <span class="token comment">#返回：False</span>  a<span class="token operator">=</span><span class="token punctuation">{<!-- --></span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'banana'</span><span class="token punctuation">,</span><span class="token string">'mango'</span><span class="token punctuation">}</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'apple'</span> <span class="token operator">not</span> <span class="token keyword">in</span> a<span class="token punctuation">)</span><span class="token comment">#apple在集合中，所以返回false</span> <span class="token comment">#返回：False</span> </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-65387.htm">领养宠物协议书范本大全最新下载（领养宠物协议书在法律上属于什么合同）</a></p>
+                                        <p>下一个：<a href="/news/article-66032.htm">宠物自己打疫苗可以去防疫站盖章吗（自己给宠物打的疫苗怎么办疫苗证）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-44202.htm" title="质量口碑较好的狗粮平价推荐（质量口碑较好的狗粮平价推荐有哪些）">质量口碑较好的狗粮平价推荐（质量口碑较好的狗粮平价推荐有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-37206.htm" title="宠物打疫苗不能洗澡的原因是什么（宠物打疫苗不能吃什么）">宠物打疫苗不能洗澡的原因是什么（宠物打疫苗不能吃什么）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-6-free-netch.htm" title="「1月6日」最高速度19.3M/S，2025年Netch每天更新免费机场订阅节点链接">「1月6日」最高速度19.3M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-2-node-share.htm" title="「1月2日」最高速度21M/S，2025年Netch每天更新免费机场订阅节点链接">「1月2日」最高速度21M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-39669.htm" title="Python数据展示 &#8211; 生成表格图片">Python数据展示 &#8211; 生成表格图片</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-28-free-subscribe-node.htm" title="「2月28日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接">「2月28日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-21-free-node-subscribe-links.htm" title="「1月21日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接">「1月21日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-19404.htm" title="动物疫苗公司排名榜前十名 动物疫苗公司排名榜前十名有哪些">动物疫苗公司排名榜前十名 动物疫苗公司排名榜前十名有哪些</a></li>
+                        <li class="py-2"><a href="/news/article-60580.htm" title="知名动物医院有几家（最好的动物医院）">知名动物医院有几家（最好的动物医院）</a></li>
+                        <li class="py-2"><a href="/news/article-58875.htm" title="使用注解@Validated、@Valid和BindingResult对入参进行校验">使用注解@Validated、@Valid和BindingResult对入参进行校验</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- We Create End -->
+    </main>
+        <footer>
+        <!-- Footer Start-->
+        <div class="footer-main" data-background="assets/img/shape/footer_bg.png">
+            <!-- footer-bottom aera -->
+            <div class="footer-bottom-area footer-bg">
+                <div class="container">
+                    <div class="footer-border">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-xl-12 ">
+                                <div class="footer-copy-right text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                                    <p>
+                                        Netch Github节点订阅官网 版权所有
+                                        <br />
+                                        Powered by WordPress
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+    <!-- JS here -->
+    <!-- All JS Custom Plugins Link Here here -->
+    <script src="/assets/website/js/frontend/netchgithub/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="/assets/website/js/frontend/netchgithub/vendor/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="/assets/website/js/frontend/netchgithub/jquery.slicknav.min.js"></script>
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="/assets/website/js/frontend/netchgithub/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/slick.min.js"></script>
+    <!-- Date Picker -->
+    <script src="/assets/website/js/frontend/netchgithub/gijgo.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="/assets/website/js/frontend/netchgithub/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/animated.headline.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.magnific-popup.js"></script>
+    <!-- Scrollup, nice-select, sticky -->
+    <script src="/assets/website/js/frontend/netchgithub/jquery.scrollUp.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.nice-select.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.sticky.js"></script>
+    <!-- contact js -->
+    <script src="/assets/website/js/frontend/netchgithub/contact.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/mail-script.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.ajaxchimp.min.js"></script>
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="/assets/website/js/frontend/netchgithub/plugins.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
