@@ -1,0 +1,257 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://netchgithub.github.io/news/article-84867.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>HCNP Routing&amp;Switching之端口隔离</title>
+        <meta name="description" content="　　前文我们了解了组播路由协议稀疏模式中的RP相关话题，回顾请参考https://www.cnblogs.com/qiuhom-1874/p/16154347.html；今天我们来聊一聊二层交换机中有" />
+        <link rel="icon" href="/assets/website/img/netchgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Netch Github节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://netchgithub.github.io/news/article-84867.htm" />
+    <meta property="og:site_name" content="Netch Github节点订阅官网" />
+    <meta property="og:title" content="HCNP Routing&amp;Switching之端口隔离" />
+    <meta property="og:image" content="https://netchgithub.github.io/uploads/20240819-2/9075874a113dc9e8c98a2f816b444eed.webp" />
+        <meta property="og:release_date" content="2025-03-30T09:36:17" />
+    <meta property="og:updated_time" content="2025-03-30T09:36:17" />
+        <meta property="og:description" content="　　前文我们了解了组播路由协议稀疏模式中的RP相关话题，回顾请参考https://www.cnblogs.com/qiuhom-1874/p/16154347.html；今天我们来聊一聊二层交换机中有" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="HCNP Routing&amp;Switching之端口隔离">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/slicknav.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/themify-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/slick.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPZ6L4HTT1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WPZ6L4HTT1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="/assets/website/img/netchgithub/logo/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparrent ">
+            <div class="main-header header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-md-4">
+                            <div class="logo">
+                                <a href="/">
+                                                                <span>Netch Github</span>
+                                                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8">
+                            <!-- Main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                                                                <li><a href="/"> 首页</a></li>
+                                                                                <li><a href="/free-nodes/"> 免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/"> 推荐机场</a></li>
+                                                                                <li><a href="/client.htm"> 客户端</a></li>
+                                                                                <li><a href="/news/"> 新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!-- Slider Area Start-->
+        <div class="services-area">
+            <div class="container">
+                <!-- Section-tittle -->
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-tittle text-center mb-80">
+                            <h1>HCNP Routing&amp;Switching之端口隔离</h1>
+                            <p>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Area End-->
+        <!-- We Create Start -->
+        <div class="we-create-area create-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>　　前文我们了解了组播路由协议稀疏模式中的RP相关话题，回顾请参考<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/qiuhom-1874/p/16154347.html"  target="_blank" rel="nofollow">https://www.cnblogs.com/qiuhom-1874/p/16154347.html</a>；今天我们来聊一聊二层交换机中有关vlan隔离相关话题；</p> <p>　　我们知道在二层交换机上划分vlan可以实现将一个广播域划分为多个广播域，从而避免广播域过大而造成的广播风暴；简单讲划分vlan就是隔离广播域；默认情况下在同一广播域的主机，只要有一台pc发送广播，同一广播域中的其他主机也会收到对应广播，这样一来可能造成同一广播域中的主机相互干扰；那有没有一种方法避免同一广播域中的主机互不干扰呢？</p> <p>　　端口隔离</p> <p>　　所谓端口隔离就是指在同一vlan内端口之间的隔离，它是交换机端口之间的一种安全访问控制机制，配置端口隔离后，无论是那个vlan都不能互相通信；</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/9733d16a6f4e6ffad30d3a64f0f084e4.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　提示：如上图所示，pc1和pc2同属于vlan10，在没有配置端口隔离pc1和pc2可以通过交换机 相互通信，即fa0/1和fa0/2可以相互转发数据；配置了端口隔离以后pc1和pc2就不能相互通信了；当然pc1和pc2都可以和gi0/1接口通信；</p> <p>　　双向端口隔离</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/084995dc146c76f5800f201bcc97c73e.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　提示：双向隔离是指在同一隔离组的端口两两相互隔离；报文不能达到通信双方的任何一端；</p> <p>　　单向端口隔离</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/f23f787e1724b00dd393ced8f0fa8f20.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　提示：单向隔离是某一端口到另一些端口的单向隔离；报文只能从某一个方向发送到对端；</p> <p>　　实验：如下图所示，配置双向隔离和单向隔离</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/137918e95b1ef77549dd3f16e99e5219.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　实验环境：在一个交换机上有三台主机，它们同属vlan12，在交换机上配置实现，pc1和pc2双向隔离，pc1到pc3单向隔离</p> <p>　　交换机配置</p> <div class="cnblogs_code"><img decoding="async" src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="HCNP Routing&amp;Switching之端口隔离" id="code_img_closed_e25e22ce-a614-43f5-a2d9-96dba8c4032b" class="code_img_closed"/><img decoding="async" src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="HCNP Routing&amp;Switching之端口隔离" id="code_img_opened_e25e22ce-a614-43f5-a2d9-96dba8c4032b" class="code_img_opened" style="display: none"/></p> <div id="cnblogs_code_open_e25e22ce-a614-43f5-a2d9-96dba8c4032b" class="cnblogs_code_hide"> <pre><span style="color: rgba(0, 0, 0, 1)">sys sys sw1 vlan</span><span style="color: rgba(128, 0, 128, 1)">12</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)"> port link</span>-<span style="color: rgba(0, 0, 0, 1)">type access port default vlan</span><span style="color: rgba(128, 0, 128, 1)">12</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">2</span><span style="color: rgba(0, 0, 0, 1)"> port link</span>-<span style="color: rgba(0, 0, 0, 1)">type access port default vlan</span><span style="color: rgba(128, 0, 128, 1)">12</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">3</span><span style="color: rgba(0, 0, 0, 1)"> port link</span>-<span style="color: rgba(0, 0, 0, 1)">type access port default vlan</span><span style="color: rgba(128, 0, 128, 1)">12</span></pre> </div> <p><span class="cnblogs_code_collapse">View Code</span></div> <p>　　验证vlan信息</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/3a0ae6eeb7bf8374daad691a2f7d79e6.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　验证pc1,pc2,pc3是否能够正常通信？</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/19271f34ab185611ada95fe55d472101.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　提示：可以看到默认情况下在同一vlan下的主机是可以相互通信；并不隔离；</p> <p>　　在交换机上配置pc1和pc2双向端口隔离</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/d168315d728e5c660035abba944e01bf.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　提示：配置双向端口隔离，我们只需把对应需要隔离的端口加入同一隔离组即可；默认不写隔离组就是组1；</p> <p>　　把pc2直连所在端口加入到隔离组</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/68cce08712bd240552d3d0016d272322.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　验证端口隔离信息</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/ce64ac5d088a45ba7eec5b52285953f6.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　提示：可以看到现在有一个隔离组group1，里面有两个端口分别是g0/0/1和g0/0/2；</p> <p>　　验证：pc1和pc2是否还能正常通信呢？</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/4383bc03fca126e1a6c47679a7cc5b21.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　提示：可以看到现在pc1和pc2就不能正常通信了；</p> <p>　　在交换机的1口和2口抓包查看其过程</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/e179f631d22e4a7cda12a67d34c69ae7.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　提示：可以看到做了端口双向隔离以后，在同一vlan下的两台主机就不能正常通信了，其实不能正常通信的最主要原因是通信双方发送的arp对方收不到，所以导致没有通信对方的mac，二层封装就不能完成；</p> <p>　　验证：pc1和pc3是否能正常通信呢？pc2和pc3是否能正常通信呢？</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/131f4a9ecc09afd4f8df65b8652edd32.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　提示：可以看到pc1和pc3通信，pc2和pc3的通信并不受pc1和pc2所在端口做双向端口隔离的影响；也就是说只有在同一隔离组里的端口通信才会相互隔离；</p> <p>　　在交换机上配置pc1和pc3单向隔离</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/8d4aabe48ee712c84ca148943011ea0b.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　提示：上述配置表示pc1所在端口单向隔离pc3,即pc1能将arp发送给pc3，但是pc3回复报文被隔离，pc1收不到pc3的回答；反之pc3发送arp，pc1和pc3做了单向隔离，所以pc3发送的arppc1根本就收不到；</p> <p>　　验证：用pc1pingpc3看看是否能够正常ping通？</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/411b3a6f3e253be08507302f925e9bef.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　提示：可以看到现在pc1pingpc3提示我们目标主机不可达；其原因是pc1发送的arp广播迟迟没有回复；所以pc1认为pc3不可达；</p> <p>　　在g0/0/1和g0/0/3上抓包，看看通信过程</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/4988dce4d4514d5b87e125189de6e3a5.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> <p>　　提示：可以看到做了单向端口隔离以后，pc1的arp能够正常到达pc3,但是pc3回复的arp被阻断，pc1收不到pc3回复的mac，所以二层封装不能正常完成，所以icmp提示我们目标主机不可达；相反pc3pingpc1，由于之前pc1发送的arp pc3收到了，即pc3拿到了pc1的mac，所以pc3pingpc1的时候是直接封装icmp包发送，并没有先发arp；由于pc1和pc3做了单向端口隔离，所以pc3发送的icmp报文pc1并没有收到，当然也就没有回复报文，所以pc3pingpc1提示超时，并不是目标主机不可达；</p> <p>　　当然端口隔离技术不仅仅限于可管理的二三层交换机上实现，有的傻瓜交换机也有端口隔离，不同的是二三层交换机可以由管理员手动定义端口隔离，而傻瓜交换机的端口隔离是通过一个拨码按钮实现，且不能手动定义端口隔离；如下图所示</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/d468fb659e6a118570682d70271d9cbf.jpg" alt="HCNP Routing&amp;Switching之端口隔离"></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-84178.htm">动物疫苗的类型及其主要优缺点（动物疫苗有哪几种）</a></p>
+                                        <p>下一个：<a href="/news/article-84868.htm">宠物粮品牌起名字大全集图片及价格（宠物粮品牌名称）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-86324.htm" title="动物医院有限公司官网招聘 动物医院有限公司官网招聘信息">动物医院有限公司官网招聘 动物医院有限公司官网招聘信息</a></li>
+                        <li class="py-2"><a href="/news/article-72471.htm" title="动物疫苗接种注意事项三字经 动物疫苗接种的注意事项包括有哪些内容">动物疫苗接种注意事项三字经 动物疫苗接种的注意事项包括有哪些内容</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-15-netch-node.htm" title="「3月15日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接">「3月15日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-70485.htm" title="动物医院工作时间（动物医院工作时间安排）">动物医院工作时间（动物医院工作时间安排）</a></li>
+                        <li class="py-2"><a href="/news/article-66628.htm" title="PHP比较对象">PHP比较对象</a></li>
+                        <li class="py-2"><a href="/news/article-75825.htm" title="动物疫苗注射方法有几种图片 动物疫苗注射方法有几种图片大全">动物疫苗注射方法有几种图片 动物疫苗注射方法有几种图片大全</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-linux-netch-node.htm" title="「3月18日」最高速度20.8M/S，2025年Netch每天更新免费机场订阅节点链接">「3月18日」最高速度20.8M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-85596.htm" title="狗粮利润多少（狗粮成本）">狗粮利润多少（狗粮成本）</a></li>
+                        <li class="py-2"><a href="/news/article-72474.htm" title="中国兽药网官方网站 中国兽药网官方网站查询">中国兽药网官方网站 中国兽药网官方网站查询</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-free-node-subscribe-links.htm" title="「3月30日」最高速度18.5M/S，2025年Netch每天更新免费机场订阅节点链接">「3月30日」最高速度18.5M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- We Create End -->
+    </main>
+        <footer>
+        <!-- Footer Start-->
+        <div class="footer-main" data-background="assets/img/shape/footer_bg.png">
+            <!-- footer-bottom aera -->
+            <div class="footer-bottom-area footer-bg">
+                <div class="container">
+                    <div class="footer-border">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-xl-12 ">
+                                <div class="footer-copy-right text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                                    <p>
+                                        Netch Github节点订阅官网 版权所有
+                                        <br />
+                                        Powered by WordPress
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+    <!-- JS here -->
+    <!-- All JS Custom Plugins Link Here here -->
+    <script src="/assets/website/js/frontend/netchgithub/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="/assets/website/js/frontend/netchgithub/vendor/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="/assets/website/js/frontend/netchgithub/jquery.slicknav.min.js"></script>
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="/assets/website/js/frontend/netchgithub/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/slick.min.js"></script>
+    <!-- Date Picker -->
+    <script src="/assets/website/js/frontend/netchgithub/gijgo.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="/assets/website/js/frontend/netchgithub/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/animated.headline.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.magnific-popup.js"></script>
+    <!-- Scrollup, nice-select, sticky -->
+    <script src="/assets/website/js/frontend/netchgithub/jquery.scrollUp.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.nice-select.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.sticky.js"></script>
+    <!-- contact js -->
+    <script src="/assets/website/js/frontend/netchgithub/contact.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/mail-script.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.ajaxchimp.min.js"></script>
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="/assets/website/js/frontend/netchgithub/plugins.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
