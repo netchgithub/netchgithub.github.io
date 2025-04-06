@@ -141,6 +141,7 @@
                   				  				  				<div id="content_views" class="htmledit_views"> <p>Logback日志系统是SLF4J的原生实现。同时，Logback也是Log4j的继任者，补全了Log4j的不足。</p> <p>1.&nbsp;Logback的模块组成</p> <ul> <li>logback-core，其他模块的功能基础</li> <li>logback-classic</li> </ul> <p>可以看作Log4j的增强版实现。<br /> 实现了SLF4J API，能够在部署的时候提供给应用日志功能。</p> <ul> <li>logback-access</li> </ul> <p>集成了Servlet容器（Tomcat,Jetty），提供以HTTP方式访问日志的功能。</p> <p>2. Logback在Maven项目中的应用</p> <p>在应用中使用兼容SLF4J的日志系统，无需在构建时依赖任何具体的日志系统，而只需要依赖SLF4J API，POM配置示例如下：</p> <pre class="has"><code>&lt;dependency&gt;   &lt;groupId&gt;org.slf4j&lt;/groupId&gt;   &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;   &lt;version&gt;1.7.9&lt;/version&gt; &lt;/dependency&gt;</code></pre> <p>而对于实际部署时使用的日志系统，无需在POM中配置，只需将日志系统的jar文件置于应用部署环境的classpath中即可。</p> <p>但是为了部署方便，可以直接在POM中给出对日志系统的依赖。例如，应用中使用Logback日志系统，配置POM如下即可：</p> <pre class="has"><code>&lt;dependency&gt;   &lt;groupId&gt;org.slf4j&lt;/groupId&gt;   &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;   &lt;version&gt;1.7.9&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt;   &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;   &lt;artifactId&gt;logback-classic&lt;/artifactId&gt;   &lt;version&gt;1.2.3&lt;/version&gt; &lt;/dependency&gt;</code></pre> <p>3.&nbsp;Logback的MDC功能概述</p> <p>Logback的设计目标就是审计、调试复杂的分布式应用。</p> <p>在分布式应用中，为了区分不同客户端的日志输出，往往为每个客户端实例化一个单独的logger。但是这样将导致大量日志的产生，而且增加了日志管理的负担。</p> <p>为此，Logback采用了更轻量级的技术，为一个客户端的每一个日志请求打上唯一识别的时间戳，而这是通过SLF4J的MDC实现的。为了给每个日志请求打上唯一识别的时间戳，必须利用请求的上下文信息，即将请求的上下文信息装入MDC，并在需要的时候被Logback的日志组件提取。</p> <p>4.&nbsp;Logback的MDC功能实现</p> <p>Logback是在logback-classic模块中实现了SLF4J的MDC功能。</p> <p>MDC中管理的数据（简称MDC数据）是以单个线程为单位进行访问的，即对MDC数据的操作（如put, get）只对当前线程有效，所以也永远是线程安全的。<br /> 在服务端，为每个请求分配一个线程进行处理，所以每个服务端线程处理的请求，都具有唯一的MDC上下文数据。</p> <p>子线程不会自动继承父线程的MDC数据。所以在创建子线程时，可以先调用MDC的getCopyOfContextMap()方法以返回一个Map&lt;String, String&gt;对象，从而获取父线程的MDC数据，然后再在子线程的开始处，最先调用MDC的setContextMap()方法为子线程设置父线程的MDC数据。从而能够在子线程中访问父线程的MDC数据。</p> <p>在使用java.util.concurrent.Executors管理线程时，使用同样的方法让子线程继承主线程的MDC数据。</p> <p>但是，在Web应用中，一个请求可能在不同的阶段被多个线程处理。这时，只是在服务端的处理线程中设置MDC数据，并不能保证请求的某些信息（如用户的认证信息等）总是能够被处理线程访问到。为了在处理一个请求时能够保证某些信息总是可访问，建议使用Servlet Filter，在请求到来时就将信息装入到MDC中，在完成所有的后续处理后，再次通过过滤器时将MDC数据移除。</p> <pre class="has"><code>		public class MyFilter implements Filter { 			public void doFilter(ServletRequest request, ServletResponse response, 				FilterChain chain) throws IOException, ServletException { 				... 				MDC.put(MY_KEY, myValue); 				... 			    try { 				  chain.doFilter(request, response); 				} finally { 				  if (MDC.contains(MY_KEY)) { 					MDC.remove(MY_KEY); 				  } 				}</code></pre> <p> Logback自带的ch.qos.logback.classic.helpers.MDCInsertingServletFilter能够将HTTP请求的hostname, request URI, user-agent等信息装入MDC，只需在web.xml中设置（建议MDCInsertingServletFilter作为第一个Filter配置，原因请读者思考），后续处理过程就可以直接访问如下请求参数的值：</p> <ul> <li>req.remoteHost</li> <li>req.xForwardedFor</li> <li>req.method</li> <li>req.requestURI</li> <li>req.requestURL</li> <li>req.queryString</li> <li>req.userAgent</li> </ul> <p>参考链接：</p> <p>&nbsp;&nbsp; &nbsp;https://logback.qos.ch/index.html<br /> &nbsp;&nbsp; &nbsp;http://logback.qos.ch/manual/mdc.html</p> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-87030.htm">Java线程池深入浅出</a></p>
+                                        <p>下一个：<a href="/news/article-87727.htm">动物防疫站工作时间 动物防疫站工作时间表</a></p>
                                     </div>
                                     </div>
                     <div class="col-md-3">
@@ -150,16 +151,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-3-27-linux-netch-node.htm" title="「3月27日」最高速度21.1M/S，2025年Netch每天更新免费机场订阅节点链接">「3月27日」最高速度21.1M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-4-1-free-node-subscribe.htm" title="「4月1日」最高速度21.2M/S，2025年Netch每天更新免费机场订阅节点链接">「4月1日」最高速度21.2M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-77199.htm" title="常用的动物疫苗 常用的动物疫苗佐剂有哪些">常用的动物疫苗 常用的动物疫苗佐剂有哪些</a></li>
                         <li class="py-2"><a href="/news/article-71810.htm" title="长沙宠物救助站地址（长沙宠物救助站地址在哪里）">长沙宠物救助站地址（长沙宠物救助站地址在哪里）</a></li>
-                        <li class="py-2"><a href="/news/article-85596.htm" title="狗粮利润多少（狗粮成本）">狗粮利润多少（狗粮成本）</a></li>
-                        <li class="py-2"><a href="/news/article-86323.htm" title="@RequestBody接收实体类时，部分字段丢失的问题">@RequestBody接收实体类时，部分字段丢失的问题</a></li>
-                        <li class="py-2"><a href="/news/article-73803.htm" title="动物免疫接种的意义 动物免疫接种的意义是什么">动物免疫接种的意义 动物免疫接种的意义是什么</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-3-16-free-node-subscribe-links.htm" title="「3月16日」最高速度19.2M/S，2025年Netch每天更新免费机场订阅节点链接">「3月16日」最高速度19.2M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-87030.htm" title="Java线程池深入浅出">Java线程池深入浅出</a></li>
-                        <li class="py-2"><a href="/news/article-84868.htm" title="宠物粮品牌起名字大全集图片及价格（宠物粮品牌名称）">宠物粮品牌起名字大全集图片及价格（宠物粮品牌名称）</a></li>
-                        <li class="py-2"><a href="/news/article-67904.htm" title="Python 查找算法_众里寻他千百度，蓦然回首那人却在灯火阑珊处（线性、二分，分块、插值查找算法)">Python 查找算法_众里寻他千百度，蓦然回首那人却在灯火阑珊处（线性、二分，分块、插值查找算法)</a></li>
+                        <li class="py-2"><a href="/news/article-72471.htm" title="动物疫苗接种注意事项三字经 动物疫苗接种的注意事项包括有哪些内容">动物疫苗接种注意事项三字经 动物疫苗接种的注意事项包括有哪些内容</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-free-netch.htm" title="「3月4日」最高速度18M/S，2025年Netch每天更新免费机场订阅节点链接">「3月4日」最高速度18M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-81999.htm" title="Vue的自定义拖动">Vue的自定义拖动</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-node-share.htm" title="「3月2日」最高速度22.2M/S，2025年Netch每天更新免费机场订阅节点链接">「3月2日」最高速度22.2M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-76523.htm" title="宠物品牌介绍（宠物品牌介绍怎么写）">宠物品牌介绍（宠物品牌介绍怎么写）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-5-linux-netch-node.htm" title="「4月5日」最高速度19.9M/S，2025年Netch每天更新免费机场订阅节点链接">「4月5日」最高速度19.9M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-17-share-netch-node.htm" title="「3月17日」最高速度19.9M/S，2025年Netch每天更新免费机场订阅节点链接">「3月17日」最高速度19.9M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-84867.htm" title="HCNP Routing&amp;Switching之端口隔离">HCNP Routing&amp;Switching之端口隔离</a></li>
                     </ul>
     </div>
 </div>
@@ -171,7 +172,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
@@ -196,15 +197,17 @@
                         <div class="row d-flex align-items-center">
                             <div class="col-xl-12 ">
                                 <div class="footer-copy-right text-center">
-                            <p>
-                                <a href="/">首页</a> | 
-                                <a href="/free-node/">免费节点</a> | 
-                                <a href="/news/">新闻资讯</a> |
-                                <a href="/about-us.htm">关于我们</a> |
-                                <a href="/disclaimer.htm">免责申明</a> |
-                                <a href="/privacy.htm">隐私申明</a> |
-                                <a href="/sitemap.xml">网站地图</a>
-                            </p>
+                                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
                                     <p>
                                         Netch Github节点订阅官网 版权所有
                                         <br />
