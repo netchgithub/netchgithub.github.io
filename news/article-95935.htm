@@ -1,0 +1,259 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://netchgithub.github.io/news/article-95935.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ｔensorflow使用笔记（１）　怎么保存和使用训练好的参数和模型</title>
+        <meta name="description" content="引言 最近在学习Tensorflow 构建CNN，训练需要耗费时间，把训练好的各个参数保存下来是最简便的，网上有很多教程，但是跟着教程走不一定一帆风顺还是踩了一些坑，然后自己填了一下坑 如何保存好训练" />
+        <link rel="icon" href="/assets/website/img/netchgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Netch Github节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://netchgithub.github.io/news/article-95935.htm" />
+    <meta property="og:site_name" content="Netch Github节点订阅官网" />
+    <meta property="og:title" content="Ｔensorflow使用笔记（１）　怎么保存和使用训练好的参数和模型" />
+    <meta property="og:image" content="https://netchgithub.github.io/uploads/20240819-2/524c4c6f10babc8794f493b9798cdebd.webp" />
+        <meta property="og:release_date" content="2025-04-14T08:04:08" />
+    <meta property="og:updated_time" content="2025-04-14T08:04:08" />
+        <meta property="og:description" content="引言 最近在学习Tensorflow 构建CNN，训练需要耗费时间，把训练好的各个参数保存下来是最简便的，网上有很多教程，但是跟着教程走不一定一帆风顺还是踩了一些坑，然后自己填了一下坑 如何保存好训练" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Ｔensorflow使用笔记（１）　怎么保存和使用训练好的参数和模型">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/slicknav.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/themify-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/slick.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPZ6L4HTT1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WPZ6L4HTT1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="/assets/website/img/netchgithub/logo/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparrent ">
+            <div class="main-header header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-md-4">
+                            <div class="logo">
+                                <a href="/">
+                                                                <span>Netch Github</span>
+                                                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8">
+                            <!-- Main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                                                                <li><a href="/"> 首页</a></li>
+                                                                                <li><a href="/free-nodes/"> 免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/"> 推荐机场</a></li>
+                                                                                <li><a href="/client.htm"> 客户端</a></li>
+                                                                                <li><a href="/news/"> 新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!-- Slider Area Start-->
+        <div class="services-area">
+            <div class="container">
+                <!-- Section-tittle -->
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-tittle text-center mb-80">
+                            <h1>Ｔensorflow使用笔记（１）　怎么保存和使用训练好的参数和模型</h1>
+                            <p>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Area End-->
+        <!-- We Create Start -->
+        <div class="we-create-area create-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <h2 id="引言">引言</h2> <p>最近在学习Tensorflow 构建CNN，训练需要耗费时间，把训练好的各个参数保存下来是最简便的，网上有很多<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://blog.csdn.net/u012235274/article/details/52588690"  target="_blank" rel="nofollow">教程</a>，但是跟着教程走不一定一帆风顺还是踩了一些坑，然后自己填了一下坑</p> <h2 id="如何保存好训练的结果">如何保存好训练的结果：</h2> <p>假设会话为sess，计算图为graph <br /> 网上看了很多资料，使用 </p> <pre class="prettyprint"><code class="hljs bash">saver=tf.train.Saver()  <span class="hljs-comment"># 不传入参数代表默认存入全部参数</span> file_name = <span class="hljs-string">'saved_model/model.ckpt'</span>  <span class="hljs-comment"># 将保存到当前目录下的的saved_model文件夹下model.ckpt文件</span> saver.saver(sess,file_name )  <span class="hljs-comment"># 保存好的模型文件</span></code></pre> <p>这样来保存模型，这样就行了吗？还不行 <br /> 但是按照这个方式，开始IDE总是会报错：No Variable to save</p> <hr/> <p>然后我的想法是：可能要把sess传给saver是吗？下面是我的代码，和一次尝试性的修改</p> <pre class="prettyprint"><code class="hljs r">graph = tf.Graph()  <span class="hljs-comment"># 计算图</span> with graph.as_default():     <span class="hljs-comment"># 定义计算图</span>     <span class="hljs-keyword">...</span>     <span class="hljs-comment"># 以上是一些权重和卷积层的定义，这里就不贴出来了</span> sess = tf.Session(graph=graph)  <span class="hljs-comment"># 把上一步定义的计算图载入到会话中</span> <span class="hljs-comment"># 给定义saver一个sess作为输入，结果也是不行的</span> saver=tf.train.Saver(sess)  <span class="hljs-comment"># 不传入参数代表默认存入全部参数</span> saver.saver(sess,<span class="hljs-string">'saved_model/model.ckpt'</span>)</code></pre> <p>这样还是会报错：没有可以被用来保存的变量。我思来想去，可能要载入graph?</p> <pre class="prettyprint"><code class="hljs r">graph = tf.Graph() with graph.as_default():     <span class="hljs-comment"># 定义计算图</span>     <span class="hljs-keyword">...</span>      <span class="hljs-comment"># ---</span> sess = tf.Session(graph=graph)  <span class="hljs-comment"># 把上一步定义的计算图载入到会话中</span> <span class="hljs-comment"># 这次把graph传进来做参数</span> saver = tf.train.Saver(graph) saver.saver(sess,<span class="hljs-string">'saved_model/model.ckpt'</span>)</code></pre> <p>结果还是不行</p> <hr/> <p>多次尝试之后，终于修改正确了</p> <pre class="prettyprint"><code class="hljs r">graph = tf.Graph() with graph.as_default():     <span class="hljs-comment"># 定义计算图</span>     <span class="hljs-keyword">...</span>      <span class="hljs-comment"># ---</span>     saver = tf.train.Saver()  <span class="hljs-comment"># 默认存储上面全部定义参数，如果不想全部存下来，也可以输入你想要保存的参数</span>  sess = tf.Session(graph=graph)  <span class="hljs-comment"># 把上一步定义的计算图载入到会话中</span> <span class="hljs-comment"># 保存，这次就可以成功了</span> saver.saver(sess,<span class="hljs-string">'saved_model/model.ckpt'</span>)</code></pre> <p>保存成功，文件夹saved_model下会出现几个文件 <br /> checkpoint文件（这个文件很重要，记录了） 还有几个文件，它们的后缀分别是 .data , .index , .meta 。我们似乎可以不搭理这三个文件</p> <hr/> <h3 id="先小结一下">先小结一下</h3> <p>如果定义了子图，或者说自己定义graph而不使用tensorflow的默认计算图的时候，定义要在定义graph最后进行定义，想保存哪个子图的变量，就要在哪个子图定义相关的Saver，这样才能实现想要的效果。 <br /> Tensorflow的图graph和会话session还是有点抽象的，一不小心就整乱了。</p> <hr/> <p><strong>Notes</strong>: 假设没有使用with graph.as_graph():这种结构，直接在脚本上定义了tensorflow的变量，再使用saver()应该是没有问题的。</p> <hr/> <h2 id="读取和使用保存好的模型参数">读取和使用保存好的模型参数</h2> <p>那存好了之后，该怎么调用了 <br /> 假设我需要在另一个新的脚本，例如 ：test.py文件上使用我的代码做测试，要怎么使用保存好的模型参数呢</p> <p><strong>有两种方式：</strong></p> <hr/> <p>先把之前训练，构建计算图已经你定义网络参数的那些代码粘贴到test.py文件下</p> <pre class="prettyprint"><code class="hljs r">graph = tf.Graph() with graph.as_default():     <span class="hljs-comment"># 定义计算图</span>     <span class="hljs-keyword">...</span>      <span class="hljs-comment"># ---</span>     saver = tf.train.Saver()</code></pre> <p>特别注意，运行到上一步的时候</p> <p>然后再使用如下代码</p> <pre class="prettyprint"><code class="hljs python"><span class="hljs-keyword">with</span> tf.Session(graph=graph) <span class="hljs-keyword">as</span> sess:         check_point_path = <span class="hljs-string">'saved_model/'</span> <span class="hljs-comment"># 保存好模型的文件路径</span>         ckpt = tf.train.get_checkpoint_state(checkpoint_dir=check_point_path)  <span class="hljs-comment"># 从模型中恢复参数      saver.restore(sess,ckpt.model_checkpoint_path)  # 讀取成功，然后就可以使用模型参数进行预测，或者测试了。</span></code></pre> <hr/> <p>如果你觉得上面那个方式有点繁琐，可以直接<code>import train.py</code> <br /> 假设train.py这个脚本的代码是这样的：</p> <pre class="prettyprint"><code class="hljs r">graph = tf.Graph() with graph.as_default():     <span class="hljs-comment"># 定义计算图</span>     <span class="hljs-keyword">...</span>      <span class="hljs-comment"># ---</span>     saver = tf.train.Saver()</code></pre> <p>那么你在你的test.py中可以这样写</p> <pre class="prettyprint"><code class="hljs python"><span class="hljs-keyword">import</span> train <span class="hljs-comment"># 参考python的命名空间方法</span> graph = train.graph sess = train.sess  <span class="hljs-keyword">with</span> tf.Session(graph=graph) <span class="hljs-keyword">as</span> sess:         check_point_path = <span class="hljs-string">'saved_model/'</span> <span class="hljs-comment"># 保存好模型的文件路径</span>         ckpt = tf.train.get_checkpoint_state(checkpoint_dir=check_point_path)  <span class="hljs-comment"># 从模型中恢复参数      saver.restore(sess,ckpt.model_checkpoint_path)  </span> </code></pre> <hr/> <p><strong>Notes</strong>: 在使用<code>saver.restore(sess,ckpt.model_checkpoint_path)</code> 后，这个时候，就不需要再次使用sess.run(init) 对参数进行初始化了（否则会覆盖掉训练好的参数），如果你在前面使用run，进行初始化，权重会根据你的定义进行初始化，但是你使用这个语句后，模型中的参数会把它覆盖掉</p> <hr/> <h2 id="最后再说一下">最后再说一下</h2> <p>好像高级的使用方法，可以根据选择不同迭代次数更新时候的权重，这里只做简单总结一下，以后学习到了再更新吧</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-95195.htm">昆明宠物领养可以去哪（昆明哪里有宠物领养中心）</a></p>
+                                        <p>下一个：<a href="/news/article-95936.htm">egg-socket.io搭配socket.io-client的坑</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-free-netch-node.htm" title="「3月5日」最高速度21.8M/S，2025年Netch每天更新免费机场订阅节点链接">「3月5日」最高速度21.8M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-87030.htm" title="Java线程池深入浅出">Java线程池深入浅出</a></li>
+                        <li class="py-2"><a href="/news/article-84868.htm" title="宠物粮品牌起名字大全集图片及价格（宠物粮品牌名称）">宠物粮品牌起名字大全集图片及价格（宠物粮品牌名称）</a></li>
+                        <li class="py-2"><a href="/news/article-82001.htm" title="HBase架构中各种组件的作用">HBase架构中各种组件的作用</a></li>
+                        <li class="py-2"><a href="/news/article-71809.htm" title="宠物自己打疫苗可以去防疫站盖章吗安全吗知乎（自己给宠物打疫苗能开检疫证明吗）">宠物自己打疫苗可以去防疫站盖章吗安全吗知乎（自己给宠物打疫苗能开检疫证明吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-5-linux-netch-node.htm" title="「4月5日」最高速度19.9M/S，2025年Netch每天更新免费机场订阅节点链接">「4月5日」最高速度19.9M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-67249.htm" title="动物疫苗稀释液首选（动物疫苗制备流程）">动物疫苗稀释液首选（动物疫苗制备流程）</a></li>
+                        <li class="py-2"><a href="/news/article-82729.htm" title="动物疫苗哪里买（动物疫苗哪里买便宜）">动物疫苗哪里买（动物疫苗哪里买便宜）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-15-share-netch-node.htm" title="「4月15日」最高速度21.1M/S，2025年Netch每天更新免费机场订阅节点链接">「4月15日」最高速度21.1M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-free-high-speed-nodes.htm" title="「3月31日」最高速度20.9M/S，2025年Netch每天更新免费机场订阅节点链接">「3月31日」最高速度20.9M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- We Create End -->
+    </main>
+        <footer>
+        <!-- Footer Start-->
+        <div class="footer-main" data-background="assets/img/shape/footer_bg.png">
+            <!-- footer-bottom aera -->
+            <div class="footer-bottom-area footer-bg">
+                <div class="container">
+                    <div class="footer-border">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-xl-12 ">
+                                <div class="footer-copy-right text-center">
+                                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                    <p>
+                                        Netch Github节点订阅官网 版权所有
+                                        <br />
+                                        Powered by WordPress
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+    <!-- JS here -->
+    <!-- All JS Custom Plugins Link Here here -->
+    <script src="/assets/website/js/frontend/netchgithub/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="/assets/website/js/frontend/netchgithub/vendor/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="/assets/website/js/frontend/netchgithub/jquery.slicknav.min.js"></script>
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="/assets/website/js/frontend/netchgithub/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/slick.min.js"></script>
+    <!-- Date Picker -->
+    <script src="/assets/website/js/frontend/netchgithub/gijgo.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="/assets/website/js/frontend/netchgithub/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/animated.headline.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.magnific-popup.js"></script>
+    <!-- Scrollup, nice-select, sticky -->
+    <script src="/assets/website/js/frontend/netchgithub/jquery.scrollUp.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.nice-select.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.sticky.js"></script>
+    <!-- contact js -->
+    <script src="/assets/website/js/frontend/netchgithub/contact.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/mail-script.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.ajaxchimp.min.js"></script>
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="/assets/website/js/frontend/netchgithub/plugins.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
