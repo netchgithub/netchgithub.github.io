@@ -1,0 +1,262 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://netchgithub.github.io/news/article-102540.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>再谈JavaScript中bind、call、apply三个方法的区别与使用方式_javascript技巧</title>
+        <meta name="description" content="call的基本使用  var ary = [12, 23, 34];  ary.slice();  以上两行简单的代码的执行过程为：ary这个实例通过原型链的查找机制找到Array.prototype" />
+        <link rel="icon" href="/assets/website/img/netchgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Netch Github节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://netchgithub.github.io/news/article-102540.htm" />
+    <meta property="og:site_name" content="Netch Github节点订阅官网" />
+    <meta property="og:title" content="再谈JavaScript中bind、call、apply三个方法的区别与使用方式_javascript技巧" />
+    <meta property="og:image" content="https://netchgithub.github.io/uploads/20240819-2/9075874a113dc9e8c98a2f816b444eed.webp" />
+        <meta property="og:release_date" content="2025-04-23T08:44:11" />
+    <meta property="og:updated_time" content="2025-04-23T08:44:11" />
+        <meta property="og:description" content="call的基本使用  var ary = [12, 23, 34];  ary.slice();  以上两行简单的代码的执行过程为：ary这个实例通过原型链的查找机制找到Array.prototype" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="再谈JavaScript中bind、call、apply三个方法的区别与使用方式_javascript技巧">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/slicknav.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/themify-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/slick.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/netchgithub/style.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WPZ6L4HTT1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WPZ6L4HTT1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="/assets/website/img/netchgithub/logo/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparrent ">
+            <div class="main-header header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-md-4">
+                            <div class="logo">
+                                <a href="/">
+                                                                <span>Netch Github</span>
+                                                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8">
+                            <!-- Main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                                                                <li><a href="/"> 首页</a></li>
+                                                                                <li><a href="/free-nodes/"> 免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/"> 推荐机场</a></li>
+                                                                                <li><a href="/client.htm"> 客户端</a></li>
+                                                                                <li><a href="/news/"> 新闻资讯</a></li>
+                                                                            </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!-- Slider Area Start-->
+        <div class="services-area">
+            <div class="container">
+                <!-- Section-tittle -->
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-tittle text-center mb-80">
+                            <h1>再谈JavaScript中bind、call、apply三个方法的区别与使用方式_javascript技巧</h1>
+                            <p>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Area End-->
+        <!-- We Create Start -->
+        <div class="we-create-area create-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<h2>call的基本使用</h2> <div class="ay1code"> <pre class="brush:js;">var ary = [12, 23, 34];  ary.slice();</pre> </div> <p>以上两行简单的代码的执行过程为：<code>ary</code>这个实例通过原型链的查找机制找到<code>Array.prototype</code>上的<code>slice</code>方法，让找到的<code>slice</code>方法执行，在执行<code>slice</code>方法的过程中才把<code>ary</code>数组进行了截取。</p> <p><strong>注意</strong>：<code>slice</code>方法执行之前有一个在原型上查找的过程（当前实例中没有找到，再根据原型链查找）。</p> <p>当知道了一个对象调用方法会有一个查找过程之后，我们再看：</p> <div class="ay1code"> <pre class="brush:js;">var obj = {name:'iceman'};  function fn() {      console.log(this);      console.log(this.name);  }  fn(); // this --&gt; window  // obj.fn(); // Uncaught TypeError: obj.fn is not a function  fn.call(obj);</pre> </div> <p><strong>call方法的作用</strong>：首先寻找<code>call</code>方法，最后通过原型链在<code>Function</code>的原型中找到<code>call</code>方法，然后让<code>call</code>方法执行，在执行<code>call</code>方法的时候，让<code>fn</code>方法中的<code>this</code>变为第一个参数值<code>obj</code>，最后再把<code>fn</code>这个函数执行。</p> <p>知道这个原型上的原理后，咱们就可以动手分析实现这三个方法了。</p> <h3>bind、call、apply 区别</h3> <ul> <li> <code>call</code> 和 <code>apply</code> 都是为了解决改变 <code>this</code> 的指向。作用都是相同的，只是传参的方式不同。</li> <li>除了第一个参数外，<code>call</code> 可以接收一个参数列表，<code>apply</code> 只接受一个参数数组</li> </ul> <div class="ay1code"> <pre class="brush:js;">let a = {      value: 1  }  function getValue(name, age) {      console.log(name)      console.log(age)      console.log(this.value)  }  getValue.call(a, 'yck', '24')  getValue.apply(a, ['yck', '24'])</pre> </div> <blockquote> <p><code>bind</code> 和其他两个方法作用也是一致的，只是该方法会返回一个函数。并且我们可以通过 <code>bind</code> 实现柯里化</p> </blockquote> <h3>如何实现一个 bind 函数</h3> <p>对于实现以下几个函数，可以从几个方面思考</p> <ul> <li>不传入第一个参数，那么默认为 <code>window</code> </li> <li>改变了 <code>this</code> 指向，让新的对象可以执行该函数。那么思路是否可以变成给新的对象添加一个函数，然后在执行完以后删除？</li> </ul> <p>当然是肯定的，于是我们可以这样写：</p> <div class="ay1code"> <pre class="brush:js;">Function.prototype.myBind = function (context) {    if (typeof this !== 'function') {      throw new TypeError('Error')    }    var _this = this    var args = [...arguments].slice(1)    // 返回一个函数    return function F() {      // 因为返回了一个函数，我们可以 new F()，所以需要判断      if (this instanceof F) {        return new _this(...args, ...arguments)      }      return _this.apply(context, args.concat(...arguments))    }  }</pre> </div> <h3>如何实现一个 call 函数</h3> <div class="ay1code"> <pre class="brush:js;">Function.prototype.myCall = function (context,...arg) {    var context = context || window  // 给 context 添加一个属性    // getValue.call(a, 'yck', '24') =&gt; a.fn = getValue    //使用symbol 选择一个独一无二的值作为新添加的属性    let symbol = new Symbol();    context[symbol] = this;    let result = context[symbol](...arg)    // 删除添加的函数    delete context[symbol]      return result  }</pre> </div> <h3>如何实现一个apply 函数</h3> <p>apply实现原理与call实现基本类似，只有传值的方式不一样。</p> <div class="ay1code"> <pre class="brush:js;">Function.prototype.myApply = function (context,arg) {    var context = context || window // 给 context 添加一个属性   // getValue.call(a, 'yck', '24') =&gt; a.fn = getValue   //使用symbol 选择一个独一无二的值作为新添加的属性   let symbol = new Symbol();   context[symbol] = this;   let result = context[symbol](arg)   // 删除添加的函数   delete context[symbol]   return result  }</pre> </div> <p>经过对以上的函数进行检测 , 完美通过。</p> <div class="ay1code"> <pre class="brush:js;">const obj = {     name : 'xiaoxiao',     getName : function (arg) {     console.log(`我是${this.name}里面的,我里面有${arg}`);     }    }    obj.getName([0,0,0,0,0]); // 我是xiaoxiao里面的    const obj2 = {     name : 'huahua'    }    //传值不一样    obj.getName.myCall(obj2,1,1,1,1,1,1);    obj.getName.myBind(obj2)(2,2,2,2,2,2);    obj.getName.myApply(obj2,[3,3,3,3,3,3]);</pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-102536.htm">EF Core 的 Code First 模式</a></p>
+                                        <p>下一个：<a href="/news/article-103365.htm">宠物粮食加工厂加盟电话号码多少 宠物粮食加工厂加盟电话号码多少啊</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-100372.htm" title="北京去哪领养狗 北京去哪领养狗狗">北京去哪领养狗 北京去哪领养狗狗</a></li>
+                        <li class="py-2"><a href="/news/article-73803.htm" title="动物免疫接种的意义 动物免疫接种的意义是什么">动物免疫接种的意义 动物免疫接种的意义是什么</a></li>
+                        <li class="py-2"><a href="/news/article-85595.htm" title="宠物医院手续办理流程（宠物医院办证流程）">宠物医院手续办理流程（宠物医院办证流程）</a></li>
+                        <li class="py-2"><a href="/news/article-85596.htm" title="狗粮利润多少（狗粮成本）">狗粮利润多少（狗粮成本）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-20-free-high-speed-nodes.htm" title="「4月20日」最高速度21.4M/S，2025年Netch每天更新免费机场订阅节点链接">「4月20日」最高速度21.4M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-79949.htm" title="动物打过狂犬疫苗人还需要打吗（动物打了狂犬疫苗还会得狂犬病吗）">动物打过狂犬疫苗人还需要打吗（动物打了狂犬疫苗还会得狂犬病吗）</a></li>
+                        <li class="py-2"><a href="/news/article-77885.htm" title="动物医院管理制度及流程表（动物医院管理办法）">动物医院管理制度及流程表（动物医院管理办法）</a></li>
+                        <li class="py-2"><a href="/news/article-87031.htm" title="Logback及其MDC功能详解">Logback及其MDC功能详解</a></li>
+                        <li class="py-2"><a href="/news/article-92905.htm" title="养猫打针要花多少钱呢视频（养猫打针需要多少钱）">养猫打针要花多少钱呢视频（养猫打针需要多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-free-node-subscribe-links.htm" title="「3月30日」最高速度18.5M/S，2025年Netch每天更新免费机场订阅节点链接">「3月30日」最高速度18.5M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- We Create End -->
+    </main>
+        <footer>
+        <!-- Footer Start-->
+        <div class="footer-main" data-background="assets/img/shape/footer_bg.png">
+            <!-- footer-bottom aera -->
+            <div class="footer-bottom-area footer-bg">
+                <div class="container">
+                    <div class="footer-border">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-xl-12 ">
+                                <div class="footer-copy-right text-center">
+                                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                    <p>
+                                        Netch Github节点订阅官网 版权所有
+                                        <br />
+                                        Powered by WordPress
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+    <!-- JS here -->
+    <!-- All JS Custom Plugins Link Here here -->
+    <script src="/assets/website/js/frontend/netchgithub/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="/assets/website/js/frontend/netchgithub/vendor/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="/assets/website/js/frontend/netchgithub/jquery.slicknav.min.js"></script>
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="/assets/website/js/frontend/netchgithub/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/slick.min.js"></script>
+    <!-- Date Picker -->
+    <script src="/assets/website/js/frontend/netchgithub/gijgo.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="/assets/website/js/frontend/netchgithub/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/animated.headline.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.magnific-popup.js"></script>
+    <!-- Scrollup, nice-select, sticky -->
+    <script src="/assets/website/js/frontend/netchgithub/jquery.scrollUp.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.nice-select.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.sticky.js"></script>
+    <!-- contact js -->
+    <script src="/assets/website/js/frontend/netchgithub/contact.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.form.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.validate.min.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/mail-script.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/jquery.ajaxchimp.min.js"></script>
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="/assets/website/js/frontend/netchgithub/plugins.js"></script>
+    <script src="/assets/website/js/frontend/netchgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
