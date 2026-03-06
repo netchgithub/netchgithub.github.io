@@ -381,6 +381,21 @@ AWS、Vultr、DigitalOcean、阿里云、腾讯云等。</p>
         在配置文件中将 transport 参数设置为 websocket，并指定 path 路径。客户端需同步使用相同路径及主机名。这样可将 Trojan 流量伪装为普通 WebSocket 通信以提升隐蔽性。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 的路由规则能否实现分国家代理？</h5></div>
+    <div class="panel-body">
+        Sing-box 支持 GeoIP 路由规则，通过引入国家数据库可根据 IP 自动判断地理位置。例如可设置 CN 走直连，US/JP 走代理，以此实现分国家策略路由，适合需要访问不同地区内容的用户。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何为 Trojan 配置 ALPN 与 SNI 提升伪装效果？</h5></div>
+    <div class="panel-body">
+        在服务器与客户端配置中设置合适的 SNI（伪装域名）并启用 ALPN（例如 http/1.1），确保 TLS 握手时使用常见的应用层协议标识，从而增加流量与普通 HTTPS 的相似度，降低被检测概率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 的 route 功能如何工作？</h5></div>
+    <div class="panel-body">
+        Sing-box 提供强大的路由系统，允许用户基于 IP、域名、GEO 数据库、进程名等条件精细分流。配置完成后，程序自动匹配规则，将不同流量转发到对应的出口。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 中的多入口（inbounds）配置有什么用？</h5></div>
     <div class="panel-body">
         V2Ray 支持多入口配置，可以同时开启 HTTP、Socks、TUN 等多种代理方式，方便不同程序接入。通过设置不同端口，用户可实现局域网共享或分离不同流量来源。<hr />    </div>
@@ -391,14 +406,9 @@ AWS、Vultr、DigitalOcean、阿里云、腾讯云等。</p>
         策略组允许用户将节点按延迟、地域或用途分组。结合路由规则，V2Ray 会自动选择最优节点处理流量，提升访问速度并降低延迟，尤其在访问海外网站时效果明显。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 的 route 功能如何工作？</h5></div>
+    <div class="panel-heading"><h5>Surfboard 策略组如何优化视频访问？</h5></div>
     <div class="panel-body">
-        Sing-box 提供强大的路由系统，允许用户基于 IP、域名、GEO 数据库、进程名等条件精细分流。配置完成后，程序自动匹配规则，将不同流量转发到对应的出口。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 是否支持多配置文件切换？</h5></div>
-    <div class="panel-body">
-        支持。Nekobox 允许用户创建多个配置文件并快速切换，适合在不同网络环境下使用不同规则。例如家用网络与移动数据可使用独立的配置方案。<hr />    </div>
+        通过策略组将视频流量分配到低延迟、高带宽节点，Surfboard 可自动切换到最佳节点。减少缓冲和卡顿，提高在线视频播放流畅性和整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Matsuri 日志太多如何调整日志级别？</h5></div>
@@ -406,19 +416,9 @@ AWS、Vultr、DigitalOcean、阿里云、腾讯云等。</p>
         在 Matsuri 或其内核配置中修改日志级别参数（如从 debug 降为 info 或 warning），同时限制日志轮转与最大文件大小。生产环境建议关闭 debug 日志以减少磁盘 I/O 与性能影响。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 的路由规则能否实现分国家代理？</h5></div>
+    <div class="panel-heading"><h5>Nekobox 是否支持多配置文件切换？</h5></div>
     <div class="panel-body">
-        Sing-box 支持 GeoIP 路由规则，通过引入国家数据库可根据 IP 自动判断地理位置。例如可设置 CN 走直连，US/JP 走代理，以此实现分国家策略路由，适合需要访问不同地区内容的用户。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 策略组如何优化视频访问？</h5></div>
-    <div class="panel-body">
-        通过策略组将视频流量分配到低延迟、高带宽节点，Surfboard 可自动切换到最佳节点。减少缓冲和卡顿，提高在线视频播放流畅性和整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何为 Trojan 配置 ALPN 与 SNI 提升伪装效果？</h5></div>
-    <div class="panel-body">
-        在服务器与客户端配置中设置合适的 SNI（伪装域名）并启用 ALPN（例如 http/1.1），确保 TLS 握手时使用常见的应用层协议标识，从而增加流量与普通 HTTPS 的相似度，降低被检测概率。<hr />    </div>
+        支持。Nekobox 允许用户创建多个配置文件并快速切换，适合在不同网络环境下使用不同规则。例如家用网络与移动数据可使用独立的配置方案。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何防止 Clash 被系统防火墙阻断？</h5></div>
@@ -452,16 +452,16 @@ AWS、Vultr、DigitalOcean、阿里云、腾讯云等。</p>
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-2-11-free-netch-node.htm" title="「2月11日」最高速度22.9M/S，2025年Netch每天更新免费机场订阅节点链接">「2月11日」最高速度22.9M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-16-free-netch-node.htm" title="「1月16日」最高速度20.6M/S，2025年Netch每天更新免费机场订阅节点链接">「1月16日」最高速度20.6M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-21-free-node-subscribe.htm" title="「1月21日」最高速度22.7M/S，2025年Netch每天更新免费机场订阅节点链接">「1月21日」最高速度22.7M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-14-free-subscribe-node.htm" title="「1月14日」最高速度19.1M/S，2025年Netch每天更新免费机场订阅节点链接">「1月14日」最高速度19.1M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-26-free-netch-node.htm" title="「2月26日」最高速度20M/S，2025年Netch每天更新免费机场订阅节点链接">「2月26日」最高速度20M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-2-7-linux-netch-node.htm" title="「2月7日」最高速度21.3M/S，2025年Netch每天更新免费机场订阅节点链接">「2月7日」最高速度21.3M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-8-free-netch.htm" title="「2月8日」最高速度22.1M/S，2025年Netch每天更新免费机场订阅节点链接">「2月8日」最高速度22.1M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-1-22-free-netch.htm" title="「1月22日」最高速度19M/S，2025年Netch每天更新免费机场订阅节点链接">「1月22日」最高速度19M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-20-free-node-subscribe-links.htm" title="「1月20日」最高速度18.1M/S，2025年Netch每天更新免费机场订阅节点链接">「1月20日」最高速度18.1M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-20-free-node-subscribe-links.htm" title="「2月20日」最高速度18.5M/S，2025年Netch每天更新免费机场订阅节点链接">「2月20日」最高速度18.5M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-4-free-node-subscribe-links.htm" title="「2月4日」最高速度21.1M/S，2025年Netch每天更新免费机场订阅节点链接">「2月4日」最高速度21.1M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-19-node-share.htm" title="「1月19日」最高速度21.5M/S，2025年Netch每天更新免费机场订阅节点链接">「1月19日」最高速度21.5M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-25-share-netch-node.htm" title="「2月25日」最高速度18M/S，2025年Netch每天更新免费机场订阅节点链接">「2月25日」最高速度18M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-27-free-high-speed-nodes.htm" title="「1月27日」最高速度18.6M/S，2025年Netch每天更新免费机场订阅节点链接">「1月27日」最高速度18.6M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-26-free-node-subscribe-links.htm" title="「1月26日」最高速度21.6M/S，2025年Netch每天更新免费机场订阅节点链接">「1月26日」最高速度21.6M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-15-free-node-subscribe-links.htm" title="「1月15日」最高速度18.1M/S，2025年Netch每天更新免费机场订阅节点链接">「1月15日」最高速度18.1M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-28-free-netch.htm" title="「1月28日」最高速度21.5M/S，2025年Netch每天更新免费机场订阅节点链接">「1月28日」最高速度21.5M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-11-free-netch-node.htm" title="「2月11日」最高速度22.9M/S，2025年Netch每天更新免费机场订阅节点链接">「2月11日」最高速度22.9M/S，2025年Netch每天更新免费机场订阅节点链接</a></li>
                     </ul>
     </div>
 </div>
@@ -473,7 +473,10 @@ AWS、Vultr、DigitalOcean、阿里云、腾讯云等。</p>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">18</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
