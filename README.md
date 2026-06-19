@@ -1,4 +1,4 @@
-# 「6月12日」最高速度22.2M/S，2025年Netch每天更新免费机场订阅节点链接  更新时间 2026-06-12 08:46:36
+# 「6月19日」最高速度19.7M/S，2025年Netch每天更新免费机场订阅节点链接  更新时间 2026-06-19 09:01:09
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://netchgithub.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://netchgithub.github.io/uploads/2026/06/0-20260612.yaml
-- https://netchgithub.github.io/uploads/2026/06/1-20260612.yaml
-- https://netchgithub.github.io/uploads/2026/06/2-20260612.yaml
-- https://netchgithub.github.io/uploads/2026/06/3-20260612.yaml
-- https://netchgithub.github.io/uploads/2026/06/4-20260612.yaml
+- https://netchgithub.github.io/uploads/2026/06/0-20260619.yaml
+- https://netchgithub.github.io/uploads/2026/06/1-20260619.yaml
+- https://netchgithub.github.io/uploads/2026/06/2-20260619.yaml
+- https://netchgithub.github.io/uploads/2026/06/3-20260619.yaml
+- https://netchgithub.github.io/uploads/2026/06/4-20260619.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://netchgithub.github.io/uploads/2026/06/0-20260612.txt
-- https://netchgithub.github.io/uploads/2026/06/1-20260612.txt
-- https://netchgithub.github.io/uploads/2026/06/2-20260612.txt
-- https://netchgithub.github.io/uploads/2026/06/3-20260612.txt
-- https://netchgithub.github.io/uploads/2026/06/4-20260612.txt
+- https://netchgithub.github.io/uploads/2026/06/0-20260619.txt
+- https://netchgithub.github.io/uploads/2026/06/1-20260619.txt
+- https://netchgithub.github.io/uploads/2026/06/2-20260619.txt
+- https://netchgithub.github.io/uploads/2026/06/3-20260619.txt
+- https://netchgithub.github.io/uploads/2026/06/4-20260619.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://netchgithub.github.io/uploads/2026/06/20260612.json
+- https://netchgithub.github.io/uploads/2026/06/20260619.json
 
 ## 更多Clash节点订阅 ：
 
