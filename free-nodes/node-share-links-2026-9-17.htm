@@ -367,39 +367,9 @@ A：立即通知服务商重置订阅 token 或账号密码，避免资源被滥
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 如何通过节点测速自动切换最优线路？</h5></div>
-    <div class="panel-body">
-        WinXray 会定期检测节点延迟和丢包率，并结合策略组自动选择最佳节点。保证网页浏览、视频播放和游戏流量走低延迟节点，提高访问速度和网络稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 使用 TAP 驱动时 Windows 弹出网络变更提示，该如何处理？</h5></div>
-    <div class="panel-body">
-        这是正常现象，TAP 虚拟网卡会改变系统网络状态。建议在首次启用时允许驱动安装并授予网络权限，若频繁弹窗可在网络设置中调整网络识别类型或将 TAP 设为非计量连接。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何实现端口与流量的精确分流？</h5></div>
-    <div class="panel-body">
-        Sing-box 支持按端口匹配流量，将不同类型应用的流量分配到指定节点。结合策略组使用，可提高访问速度和网络稳定性，实现精准分流和优化用户体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 的节点导入方式有哪些？</h5></div>
     <div class="panel-body">
         Potatso Lite 支持通过手动添加节点信息或扫描二维码导入节点。虽然不支持自动订阅更新，但对轻量用户来说，手动方式足够使用，方便在 iOS 设备上管理节点。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 如何实现 UDP 游戏加速？</h5></div>
-    <div class="panel-body">
-        Netch 支持 UDP 转发，可专门为游戏流量建立高速通道。结合策略组和节点延迟检测，可有效减少丢包和延迟，提高游戏体验的流畅性和稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 如何针对不同用户设置流量配额？</h5></div>
-    <div class="panel-body">
-        管理员可以为每个用户单独设置流量上限或带宽限制。超过配额时可自动阻止或降速，保证服务器资源合理分配，避免单用户占用过多带宽影响其他用户。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 如何管理不同用户的带宽？</h5></div>
-    <div class="panel-body">
-        管理员可以为每个用户设置独立带宽限制和流量配额。超出配额时可自动阻断或降速，确保服务器资源合理分配，避免单用户占用过多带宽，保障整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekobox 可以定时更新订阅节点吗？</h5></div>
@@ -412,9 +382,39 @@ A：立即通知服务商重置订阅 token 或账号密码，避免资源被滥
         Mihomo 是 Clash Meta 的优化分支，采用最新 Go 语言版本编译并针对多线程性能进行了改进。整体运行效率略高，特别是在多节点切换和 DNS 分流方面表现更流畅。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 如何针对不同用户设置流量配额？</h5></div>
+    <div class="panel-body">
+        管理员可以为每个用户单独设置流量上限或带宽限制。超过配额时可自动阻止或降速，保证服务器资源合理分配，避免单用户占用过多带宽影响其他用户。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 使用 TAP 驱动时 Windows 弹出网络变更提示，该如何处理？</h5></div>
+    <div class="panel-body">
+        这是正常现象，TAP 虚拟网卡会改变系统网络状态。建议在首次启用时允许驱动安装并授予网络权限，若频繁弹窗可在网络设置中调整网络识别类型或将 TAP 设为非计量连接。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 如何实现端口与流量的精确分流？</h5></div>
+    <div class="panel-body">
+        Sing-box 支持按端口匹配流量，将不同类型应用的流量分配到指定节点。结合策略组使用，可提高访问速度和网络稳定性，实现精准分流和优化用户体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 如何管理不同用户的带宽？</h5></div>
+    <div class="panel-body">
+        管理员可以为每个用户设置独立带宽限制和流量配额。超出配额时可自动阻断或降速，确保服务器资源合理分配，避免单用户占用过多带宽，保障整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 的 Socks 模式有什么作用？</h5></div>
     <div class="panel-body">
-        Netch 的 Socks 模式允许用户将代理仅应用于指定进程，而非全局网络。此模式非常适合单个游戏或程序代理，避免影响其他应用的连接方式与速度。    </div>
+        Netch 的 Socks 模式允许用户将代理仅应用于指定进程，而非全局网络。此模式非常适合单个游戏或程序代理，避免影响其他应用的连接方式与速度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 如何实现 UDP 游戏加速？</h5></div>
+    <div class="panel-body">
+        Netch 支持 UDP 转发，可专门为游戏流量建立高速通道。结合策略组和节点延迟检测，可有效减少丢包和延迟，提高游戏体验的流畅性和稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 如何通过节点测速自动切换最优线路？</h5></div>
+    <div class="panel-body">
+        WinXray 会定期检测节点延迟和丢包率，并结合策略组自动选择最佳节点。保证网页浏览、视频播放和游戏流量走低延迟节点，提高访问速度和网络稳定性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -462,16 +462,16 @@ A：立即通知服务商重置订阅 token 或账号密码，避免资源被滥
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-8-22-node-share.htm" title="「8月22日」最高速度18.1M/S，2025年Netch每天更新免费机场订阅节点链接">「8月22日」最高速度18.1M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/netch-node-2026-8-29.htm" title="「8月29日」最高速度22.1M/S，2025年Netch每天更新免费机场订阅节点链接">「8月29日」最高速度22.1M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-20-linux-netch-node.htm" title="「8月20日」最高速度22M/S，2025年Netch每天更新免费机场订阅节点链接">「8月20日」最高速度22M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-8-linux-netch-node.htm" title="「8月8日」最高速度18.6M/S，2025年Netch每天更新免费机场订阅节点链接">「8月8日」最高速度18.6M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-netch-node-2026-8-31.htm" title="「8月31日」最高速度19.6M/S，2025年Netch每天更新免费机场订阅节点链接">「8月31日」最高速度19.6M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-5.htm" title="「9月5日」最高速度18M/S，2025年Netch每天更新免费机场订阅节点链接">「9月5日」最高速度18M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-24-share-netch-node.htm" title="「8月24日」最高速度22.8M/S，2025年Netch每天更新免费机场订阅节点链接">「8月24日」最高速度22.8M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-28-free-node-subscribe.htm" title="「8月28日」最高速度20.8M/S，2025年Netch每天更新免费机场订阅节点链接">「8月28日」最高速度20.8M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-25.htm" title="「8月25日」最高速度22.3M/S，2025年Netch每天更新免费机场订阅节点链接">「8月25日」最高速度22.3M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-11.htm" title="「9月11日」最高速度22.6M/S，2025年Netch每天更新免费机场订阅节点链接">「9月11日」最高速度22.6M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-16-free-netch.htm" title="「9月16日」最高速度21.9M/S，2025年Netch每天更新免费机场订阅节点链接">「9月16日」最高速度21.9M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/netch-node-2026-9-15.htm" title="「9月15日」最高速度19.7M/S，2025年Netch每天更新免费机场订阅节点链接">「9月15日」最高速度19.7M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-17.htm" title="「9月17日」最高速度20.8M/S，2025年Netch每天更新免费机场订阅节点链接">「9月17日」最高速度20.8M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-20-linux-netch-node.htm" title="「9月20日」最高速度21.4M/S，2025年Netch每天更新免费机场订阅节点链接">「9月20日」最高速度21.4M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-25.htm" title="「9月25日」最高速度19.3M/S，2025年Netch每天更新免费机场订阅节点链接">「9月25日」最高速度19.3M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-6-free-node-subscribe.htm" title="「8月6日」最高速度19.7M/S，2025年Netch每天更新免费机场订阅节点链接">「8月6日」最高速度19.7M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-9-9.htm" title="「9月9日」最高速度22.8M/S，2025年Netch每天更新免费机场订阅节点链接">「9月9日」最高速度22.8M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-18-free-netch.htm" title="「9月18日」最高速度20.5M/S，2025年Netch每天更新免费机场订阅节点链接">「9月18日」最高速度20.5M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-10-share-netch-node.htm" title="「9月10日」最高速度22.3M/S，2025年Netch每天更新免费机场订阅节点链接">「9月10日」最高速度22.3M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -483,7 +483,7 @@ A：立即通知服务商重置订阅 token 或账号密码，避免资源被滥
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
