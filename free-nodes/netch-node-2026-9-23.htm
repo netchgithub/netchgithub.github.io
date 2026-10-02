@@ -324,34 +324,9 @@ sudo </span><span><span class="hljs-built_in">rm</span></span><span> -rf /usr/lo
         是的。Nekoray 可以设置订阅更新频率，如每天或每小时。程序会自动下载更新节点并替换旧节点，保证用户始终使用最新线路。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 TCP + TLS 模式适合什么场景？</h5></div>
-    <div class="panel-body">
-        TCP + TLS 模式可模拟 HTTPS 流量，增强抗封锁能力。适合网络封锁严格的环境，通过策略组选择最佳节点，可保证访问速度和连接稳定性，尤其适用于网页浏览和视频播放。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 协议混淆如何增强安全性？</h5></div>
     <div class="panel-body">
         SSR 可通过选择混淆方式和协议组合隐藏真实流量特征，降低被 DPI 检测和封锁风险。合理配置可提高节点隐蔽性和长期可用性，保证科学上网体验稳定可靠。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>何为 multiplex (mux)，启用后会有哪些利弊？</h5></div>
-    <div class="panel-body">
-        mux 是多路复用技术，可在单一连接上传输多路流量，从而减少握手次数与连接开销。优点是提升短连接并发效率，缺点是在丢包或单连接异常时可能影响多条会话并增加调试复杂度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 的伪装域名配置有哪些注意事项？</h5></div>
-    <div class="panel-body">
-        伪装域名必须真实可访问且证书有效，否则无法建立连接。正确配置可隐藏真实流量特征，降低被封锁和检测风险，提高节点安全性和长期可用性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 支持节点批量更新吗？</h5></div>
-    <div class="panel-body">
-        支持。Nekoray 可通过订阅 URL 批量下载最新节点并替换旧节点。结合定时更新功能，可保持节点列表最新，减少手动维护和配置工作。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 还能在现代网络环境下正常使用吗？</h5></div>
-    <div class="panel-body">
-        虽然 SSR 的项目已经停止维护，但部分服务器依然提供 SSR 节点。只要服务器配置得当，SSR 在一些地区仍然可以稳定使用。不过，它的安全性和兼容性不如 V2Ray 或 Trojan 等现代协议。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的 obfs 混淆原理是什么？</h5></div>
@@ -359,14 +334,39 @@ sudo </span><span><span class="hljs-built_in">rm</span></span><span> -rf /usr/lo
         SSR 的 obfs 模块通过模拟常见流量特征（如 HTTPS 或 HTTP 请求头）来掩盖加密流量。这样可让代理流量看起来像正常的网页访问，从而有效降低被检测和封锁的风险。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 的伪装域名如何选择更安全？</h5></div>
+    <div class="panel-body">
+        伪装域名应选择真实可访问的网站，且证书有效。这样 Trojan 流量能伪装成正常 HTTPS 请求，减少被封锁或检测的风险，提高节点安全性和稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 的伪装域名配置有哪些注意事项？</h5></div>
+    <div class="panel-body">
+        伪装域名必须真实可访问且证书有效，否则无法建立连接。正确配置可隐藏真实流量特征，降低被封锁和检测风险，提高节点安全性和长期可用性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的 TCP + TLS 模式适合什么场景？</h5></div>
+    <div class="panel-body">
+        TCP + TLS 模式可模拟 HTTPS 流量，增强抗封锁能力。适合网络封锁严格的环境，通过策略组选择最佳节点，可保证访问速度和连接稳定性，尤其适用于网页浏览和视频播放。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 还能在现代网络环境下正常使用吗？</h5></div>
+    <div class="panel-body">
+        虽然 SSR 的项目已经停止维护，但部分服务器依然提供 SSR 节点。只要服务器配置得当，SSR 在一些地区仍然可以稳定使用。不过，它的安全性和兼容性不如 V2Ray 或 Trojan 等现代协议。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>何为 multiplex (mux)，启用后会有哪些利弊？</h5></div>
+    <div class="panel-body">
+        mux 是多路复用技术，可在单一连接上传输多路流量，从而减少握手次数与连接开销。优点是提升短连接并发效率，缺点是在丢包或单连接异常时可能影响多条会话并增加调试复杂度。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 多路复用对高频连接的优势？</h5></div>
     <div class="panel-body">
         多路复用可让多个短连接共享同一通道，减少握手和加密开销，提高吞吐量。适合高频短连接场景，如即时通讯和游戏，保证流量快速、稳定传输。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 的伪装域名如何选择更安全？</h5></div>
+    <div class="panel-heading"><h5>Nekoray 支持节点批量更新吗？</h5></div>
     <div class="panel-body">
-        伪装域名应选择真实可访问的网站，且证书有效。这样 Trojan 流量能伪装成正常 HTTPS 请求，减少被封锁或检测的风险，提高节点安全性和稳定性。    </div>
+        支持。Nekoray 可通过订阅 URL 批量下载最新节点并替换旧节点。结合定时更新功能，可保持节点列表最新，减少手动维护和配置工作。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -414,16 +414,16 @@ sudo </span><span><span class="hljs-built_in">rm</span></span><span> -rf /usr/lo
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-9-9.htm" title="「9月9日」最高速度22.8M/S，2025年Netch每天更新免费机场订阅节点链接">「9月9日」最高速度22.8M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-22-share-netch-node.htm" title="「9月22日」最高速度20.4M/S，2025年Netch每天更新免费机场订阅节点链接">「9月22日」最高速度20.4M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-19.htm" title="「9月19日」最高速度21M/S，2025年Netch每天更新免费机场订阅节点链接">「9月19日」最高速度21M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-28-free-node-subscribe.htm" title="「8月28日」最高速度20.8M/S，2025年Netch每天更新免费机场订阅节点链接">「8月28日」最高速度20.8M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-11.htm" title="「9月11日」最高速度22.6M/S，2025年Netch每天更新免费机场订阅节点链接">「9月11日」最高速度22.6M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-21.htm" title="「9月21日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接">「9月21日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-20-linux-netch-node.htm" title="「8月20日」最高速度22M/S，2025年Netch每天更新免费机场订阅节点链接">「8月20日」最高速度22M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-9-18-free-netch.htm" title="「9月18日」最高速度20.5M/S，2025年Netch每天更新免费机场订阅节点链接">「9月18日」最高速度20.5M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-netch-node-2026-8-19.htm" title="「8月19日」最高速度21.9M/S，2025年Netch每天更新免费机场订阅节点链接">「8月19日」最高速度21.9M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-netch-node-2026-8-21.htm" title="「8月21日」最高速度18.6M/S，2025年Netch每天更新免费机场订阅节点链接">「8月21日」最高速度18.6M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-7.htm" title="「9月7日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接">「9月7日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-21.htm" title="「9月21日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接">「9月21日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-30-linux-netch-node.htm" title="「9月30日」最高速度22.8M/S，2025年Netch每天更新免费机场订阅节点链接">「9月30日」最高速度22.8M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-4-free-subscribe-node.htm" title="「9月4日」最高速度21M/S，2025年Netch每天更新免费机场订阅节点链接">「9月4日」最高速度21M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-9-9.htm" title="「9月9日」最高速度22.8M/S，2025年Netch每天更新免费机场订阅节点链接">「9月9日」最高速度22.8M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-12-free-node-subscribe.htm" title="「9月12日」最高速度19.8M/S，2025年Netch每天更新免费机场订阅节点链接">「9月12日」最高速度19.8M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-10-share-netch-node.htm" title="「9月10日」最高速度22.3M/S，2025年Netch每天更新免费机场订阅节点链接">「9月10日」最高速度22.3M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-linux-netch-node.htm" title="「9月2日」最高速度21.9M/S，2025年Netch每天更新免费机场订阅节点链接">「9月2日」最高速度21.9M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-8-share-netch-node.htm" title="「9月8日」最高速度21.3M/S，2025年Netch每天更新免费机场订阅节点链接">「9月8日」最高速度21.3M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -435,10 +435,10 @@ sudo </span><span><span class="hljs-built_in">rm</span></span><span> -rf /usr/lo
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                <h4><span class="badge" style="float: right;">2</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                     </ul>
     </div>
