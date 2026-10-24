@@ -182,24 +182,14 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Sing-box 支持 GeoIP 路由规则，通过引入国家数据库可根据 IP 自动判断地理位置。例如可设置 CN 走直连，US/JP 走代理，以此实现分国家策略路由，适合需要访问不同地区内容的用户。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何精确匹配端口流量？</h5></div>
-    <div class="panel-body">
-        Sing-box 支持按端口设置流量分流规则，将不同类型流量分配到不同节点。结合策略组使用，可提高访问速度和稳定性，实现精准流量管理和优化网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 还能用吗？</h5></div>
-    <div class="panel-body">
-        虽然 SSR 项目早已停止维护，但部分服务器和机场仍提供 SSR 节点。SSR 使用的加密与混淆方式能应对部分防火墙检测。不过，建议用户逐步迁移到 V2Ray 或 Trojan 等更现代的协议以获得更好稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 如何实现按应用分流？</h5></div>
-    <div class="panel-body">
-        Surfboard 支持通过策略组和规则文件按应用分流，将不同应用的流量分配到不同节点。这样可保证游戏或视频走低延迟节点，提高访问速度并优化网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS 的 XTLS 模式能提升传输效率吗？</h5></div>
     <div class="panel-body">
         XTLS 模式通过减少冗余加密和握手次数，降低延迟，提高吞吐量。在高并发和短连接场景下，效率明显优于普通 TLS，同时保持数据安全性和隐蔽性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 的多出口功能如何使用？</h5></div>
+    <div class="panel-body">
+        WinXray 支持同时配置多个 outbound 节点，并通过路由规则或策略组选择不同出口。这样可以根据流量类型或目的地自动选择节点，实现灵活分流和负载均衡。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 如何按端口匹配流量分配节点？</h5></div>
@@ -212,14 +202,24 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         同时使用多个节点会占用更多系统资源和带宽，可能对性能有一定影响。通过策略组和分流规则合理安排流量，可以降低资源占用，同时保持网络稳定和速度。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的多出口功能如何使用？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 如何精确匹配端口流量？</h5></div>
     <div class="panel-body">
-        WinXray 支持同时配置多个 outbound 节点，并通过路由规则或策略组选择不同出口。这样可以根据流量类型或目的地自动选择节点，实现灵活分流和负载均衡。<hr />    </div>
+        Sing-box 支持按端口设置流量分流规则，将不同类型流量分配到不同节点。结合策略组使用，可提高访问速度和稳定性，实现精准流量管理和优化网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Surfboard 如何实现按应用分流？</h5></div>
+    <div class="panel-body">
+        Surfboard 支持通过策略组和规则文件按应用分流，将不同应用的流量分配到不同节点。这样可保证游戏或视频走低延迟节点，提高访问速度并优化网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 支持哪些类型的重写脚本？</h5></div>
     <div class="panel-body">
-        QuantumultX 支持 JavaScript 脚本，可修改请求头、响应内容、自动跳转、广告屏蔽和定制流量处理。结合策略组，可实现高度个性化的网络访问控制和优化。    </div>
+        QuantumultX 支持 JavaScript 脚本，可修改请求头、响应内容、自动跳转、广告屏蔽和定制流量处理。结合策略组，可实现高度个性化的网络访问控制和优化。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 还能用吗？</h5></div>
+    <div class="panel-body">
+        虽然 SSR 项目早已停止维护，但部分服务器和机场仍提供 SSR 节点。SSR 使用的加密与混淆方式能应对部分防火墙检测。不过，建议用户逐步迁移到 V2Ray 或 Trojan 等更现代的协议以获得更好稳定性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -267,16 +267,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-7.htm" title="「10月7日」最高速度22.9M/S，2025年Netch每天更新免费机场订阅节点链接">「10月7日」最高速度22.9M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-9-12-free-node-subscribe.htm" title="「9月12日」最高速度19.8M/S，2025年Netch每天更新免费机场订阅节点链接">「9月12日」最高速度19.8M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-netch-node-2026-10-15.htm" title="「10月15日」最高速度21.2M/S，2025年Netch每天更新免费机场订阅节点链接">「10月15日」最高速度21.2M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/netch-node-2026-10-3.htm" title="「10月3日」最高速度22.9M/S，2025年Netch每天更新免费机场订阅节点链接">「10月3日」最高速度22.9M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-25.htm" title="「9月25日」最高速度19.3M/S，2025年Netch每天更新免费机场订阅节点链接">「9月25日」最高速度19.3M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-8-share-netch-node.htm" title="「9月8日」最高速度21.3M/S，2025年Netch每天更新免费机场订阅节点链接">「9月8日」最高速度21.3M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-8-free-node-subscribe.htm" title="「10月8日」最高速度19.7M/S，2025年Netch每天更新免费机场订阅节点链接">「10月8日」最高速度19.7M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-14-free-netch.htm" title="「10月14日」最高速度20.7M/S，2025年Netch每天更新免费机场订阅节点链接">「10月14日」最高速度20.7M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-10-free-subscribe-node.htm" title="「10月10日」最高速度21.6M/S，2025年Netch每天更新免费机场订阅节点链接">「10月10日」最高速度21.6M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-17.htm" title="「10月17日」最高速度20.8M/S，2025年Netch每天更新免费机场订阅节点链接">「10月17日」最高速度20.8M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-16-free-netch.htm" title="「9月16日」最高速度21.9M/S，2025年Netch每天更新免费机场订阅节点链接">「9月16日」最高速度21.9M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-11.htm" title="「9月11日」最高速度22.6M/S，2025年Netch每天更新免费机场订阅节点链接">「9月11日」最高速度22.6M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-21.htm" title="「9月21日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接">「9月21日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-24-node-share.htm" title="「9月24日」最高速度18.9M/S，2025年Netch每天更新免费机场订阅节点链接">「9月24日」最高速度18.9M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-29.htm" title="「9月29日」最高速度20M/S，2025年Netch每天更新免费机场订阅节点链接">「9月29日」最高速度20M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-8-share-netch-node.htm" title="「9月8日」最高速度21.3M/S，2025年Netch每天更新免费机场订阅节点链接">「9月8日」最高速度21.3M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-5.htm" title="「9月5日」最高速度18M/S，2025年Netch每天更新免费机场订阅节点链接">「9月5日」最高速度18M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -288,7 +288,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">16</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
