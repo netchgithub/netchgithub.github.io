@@ -301,16 +301,6 @@ Clash 目前有多个不同的版本和分支，每个版本在 UI 设计、配�
         Rule Provider 是 Clash 的规则分发机制。用户可以订阅不同的规则集，比如广告拦截、社交媒体、流媒体等，实现按需加载。它让配置文件更加简洁、动态更新，并支持多源规则管理。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 如何实现用户流量分配？</h5></div>
-    <div class="panel-body">
-        管理员可为每个用户设置带宽和流量配额。超出限制时可自动降速或阻止访问，确保服务器资源合理分配，避免单用户占用过多带宽，提高整体网络公平性和效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 支持哪些协议？</h5></div>
-    <div class="panel-body">
-        Clash 支持多种主流代理协议，包括 VMess、VLess、Trojan、Shadowsocks、Snell、Socks5 等。通过配置文件或订阅源，用户可以灵活组合不同协议的节点，实现复杂的分流策略与优先级控制。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 节点手动切换有什么优势？</h5></div>
     <div class="panel-body">
         手动切换节点可以让用户根据网络延迟和用途选择最合适的节点，适合在节点不稳定或特殊访问需求下使用。虽然不自动，但可以灵活调整，提高访问效率。<hr />    </div>
@@ -321,9 +311,9 @@ Clash 目前有多个不同的版本和分支，每个版本在 UI 设计、配�
         freedom 是直连模块，可用于分流策略中实现部分流量直连。用户可在 routing 中设置匹配规则，将国内域名或局域网 IP 指向 freedom 出口，从而减少代理开销和延迟。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 节点延迟检测如何帮助分流？</h5></div>
+    <div class="panel-heading"><h5>Surfboard 与 Shadowrocket 有什么区别？</h5></div>
     <div class="panel-body">
-        Clash 会定期测试节点延迟，并结合策略组自动选择最优节点处理流量。避免访问高延迟或失效节点，提高网页浏览、视频播放和游戏速度及稳定性，优化整体网络体验。<hr />    </div>
+        两者都是 iOS 上的代理工具。Shadowrocket 功能更全面、更新更频繁，而 Surfboard 以轻量和快速见长。若只需简单分流与节点切换，Surfboard 足以满足日常使用。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 如何实现分流规则？</h5></div>
@@ -331,19 +321,29 @@ Clash 目前有多个不同的版本和分支，每个版本在 UI 设计、配�
         V2Ray 使用 routing 模块实现分流，可根据目标域名、IP、端口或协议类型决定流量走向。用户可自定义多个 outbound，并通过规则实现国内直连、国外代理等智能路由功能。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash for Android 如何导入订阅并自动更新？</h5></div>
+    <div class="panel-body">
+        在 Clash for Android 的配置界面中选择“配置文件”→“新建配置”，粘贴订阅链接即可。启用自动更新功能后，软件会定期检查订阅源是否有新节点，并在后台自动替换旧配置，保持节点最新状态。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 节点延迟检测如何帮助分流？</h5></div>
+    <div class="panel-body">
+        Clash 会定期测试节点延迟，并结合策略组自动选择最优节点处理流量。避免访问高延迟或失效节点，提高网页浏览、视频播放和游戏速度及稳定性，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Nekoray 节点订阅如何实现自动更新？</h5></div>
     <div class="panel-body">
         用户可添加订阅 URL，Nekoray 会定期自动下载并更新节点列表。保持节点最新可减少手动维护，提高节点可用性和网络连接稳定性，确保科学上网体验顺畅。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 与 Shadowrocket 有什么区别？</h5></div>
+    <div class="panel-heading"><h5>Hiddify Next 如何实现用户流量分配？</h5></div>
     <div class="panel-body">
-        两者都是 iOS 上的代理工具。Shadowrocket 功能更全面、更新更频繁，而 Surfboard 以轻量和快速见长。若只需简单分流与节点切换，Surfboard 足以满足日常使用。<hr />    </div>
+        管理员可为每个用户设置带宽和流量配额。超出限制时可自动降速或阻止访问，确保服务器资源合理分配，避免单用户占用过多带宽，提高整体网络公平性和效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash for Android 如何导入订阅并自动更新？</h5></div>
+    <div class="panel-heading"><h5>Clash 支持哪些协议？</h5></div>
     <div class="panel-body">
-        在 Clash for Android 的配置界面中选择“配置文件”→“新建配置”，粘贴订阅链接即可。启用自动更新功能后，软件会定期检查订阅源是否有新节点，并在后台自动替换旧配置，保持节点最新状态。    </div>
+        Clash 支持多种主流代理协议，包括 VMess、VLess、Trojan、Shadowsocks、Snell、Socks5 等。通过配置文件或订阅源，用户可以灵活组合不同协议的节点，实现复杂的分流策略与优先级控制。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -391,16 +391,16 @@ Clash 目前有多个不同的版本和分支，每个版本在 UI 设计、配�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-25.htm" title="「9月25日」最高速度19.3M/S，2025年Netch每天更新免费机场订阅节点链接">「9月25日」最高速度19.3M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/netch-node-2026-9-15.htm" title="「9月15日」最高速度19.7M/S，2025年Netch每天更新免费机场订阅节点链接">「9月15日」最高速度19.7M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-9-24-node-share.htm" title="「9月24日」最高速度18.9M/S，2025年Netch每天更新免费机场订阅节点链接">「9月24日」最高速度18.9M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/netch-node-2026-10-3.htm" title="「10月3日」最高速度22.9M/S，2025年Netch每天更新免费机场订阅节点链接">「10月3日」最高速度22.9M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-30-free-node-subscribe.htm" title="「10月30日」最高速度19.9M/S，2025年Netch每天更新免费机场订阅节点链接">「10月30日」最高速度19.9M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-12-free-node-subscribe.htm" title="「9月12日」最高速度19.8M/S，2025年Netch每天更新免费机场订阅节点链接">「9月12日」最高速度19.8M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-18-free-netch.htm" title="「9月18日」最高速度20.5M/S，2025年Netch每天更新免费机场订阅节点链接">「9月18日」最高速度20.5M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/netch-node-2026-9-23.htm" title="「9月23日」最高速度21.3M/S，2025年Netch每天更新免费机场订阅节点链接">「9月23日」最高速度21.3M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-8-share-netch-node.htm" title="「9月8日」最高速度21.3M/S，2025年Netch每天更新免费机场订阅节点链接">「9月8日」最高速度21.3M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-10-21.htm" title="「10月21日」最高速度21.7M/S，2025年Netch每天更新免费机场订阅节点链接">「10月21日」最高速度21.7M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-8-free-node-subscribe.htm" title="「10月8日」最高速度19.7M/S，2025年Netch每天更新免费机场订阅节点链接">「10月8日」最高速度19.7M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-6-free-netch.htm" title="「10月6日」最高速度21.5M/S，2025年Netch每天更新免费机场订阅节点链接">「10月6日」最高速度21.5M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-28-share-netch-node.htm" title="「10月28日」最高速度20.2M/S，2025年Netch每天更新免费机场订阅节点链接">「10月28日」最高速度20.2M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-21.htm" title="「9月21日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接">「9月21日」最高速度22.5M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/netch-node-2026-10-13.htm" title="「10月13日」最高速度21.6M/S，2025年Netch每天更新免费机场订阅节点链接">「10月13日」最高速度21.6M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-4-free-subscribe-node.htm" title="「11月4日」最高速度21.8M/S，2025年Netch每天更新免费机场订阅节点链接">「11月4日」最高速度21.8M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-linux-netch-node.htm" title="「9月2日」最高速度21.9M/S，2025年Netch每天更新免费机场订阅节点链接">「9月2日」最高速度21.9M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-4-free-netch.htm" title="「10月4日」最高速度18.9M/S，2025年Netch每天更新免费机场订阅节点链接">「10月4日」最高速度18.9M/S，2025年Netch每天更新免费机场订阅节点链接</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -411,6 +411,9 @@ Clash 目前有多个不同的版本和分支，每个版本在 UI 设计、配�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
+            </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
